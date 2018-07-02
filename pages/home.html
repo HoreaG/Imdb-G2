@@ -1,6 +1,14 @@
 <html>
  <head>
      <title>My IMDB</title>
+     <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script src="../models/Movie.js"></script>
+      <script src="../models/MovieList.js"></script>
+      <script src="../views/home.js"></script>
+      <script src="../views/movieDetails.js"></script>
      <link rel="stylesheet" type="text/css" href="style.css"/>
  </head>
   <body>
@@ -23,7 +31,7 @@
        <header>
          <h2>Most recent 10 movies</h2>
        </header>
-        <div class="most-recent-movies">
+        <div class="most-recent-movies" id="ceva">
          <!-- Feature -->
           <section>
           <a href="#" class="image-featured"><img src="" alt="" /></a>
