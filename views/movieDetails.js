@@ -1,6 +1,8 @@
 window. onload = ()=>{
     const current_movie = new Movie();
     const current_id = getUrlParameter('postId');
+
+    
 }
 
 function getUrlParameter(name) {
