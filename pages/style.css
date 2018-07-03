@@ -1,15 +1,15 @@
 
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  nav {
+nav {
     overflow: hidden;
     background-color: #e9e9e9;
   }
   
-  nav a {
+nav a {
     float: left;
     display: block;
     color: black;
@@ -19,28 +19,28 @@ body {
     font-size: 17px;
   }
   
-  nav a:hover {
+nav a:hover {
     background-color: #ddd;
     color: black;
   }
   
-  nav a.active {
+nav a.active {
     background-color: #2196F3;
     color: white;
   }
   
-  nav .search-container {
+nav .search-container {
     float: right;
   }
   
-  nav input[type=text] {
+nav input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
   }
   
-  nav .search-container button {
+nav .search-container button {
     float: right;
     padding: 6px;
     margin-top: 8px;
@@ -51,7 +51,7 @@ body {
     cursor: pointer;
   }
   
-  nav .search-container button:hover {
+nav .search-container button:hover {
     background: #ccc;
   }
 #content {
@@ -60,12 +60,34 @@ body {
     background: #fff;
     text-align: center;
     padding: 6em 0;
+    margin: 0 auto;
 }
 
-    #features p {
-        text-align: center;
-    }
+#features p {
+    text-align: center;
+}
 
-    #features ul.actions {
-        margin-top: 1.25em;
-    }
+#features ul.actions {
+    margin-top: 1.25em;
+}
+.movies-global-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.movie-element {
+    width: 20%;
+}
+.poster-container {
+    width: 100%;
+    border: 1px solid green;
+    height: auto;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
+}
+.movie-poster {
+    width: 100%;
+    border: 1px solid red;
+    display:flex;
+}
