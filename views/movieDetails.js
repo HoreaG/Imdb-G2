@@ -1,8 +1,12 @@
 window. onload = ()=>{
     const current_movie = new Movie();
     const current_id = getUrlParameter('postId');
-
-    
+   
+    current_movie.MovieFetchData(current_id).then(()=>{
+        const title = document.getElementById('movie_title');
+        title.innerHTML = current_movie.results.Title;
+        
+    });
 }
 
 function getUrlParameter(name) {

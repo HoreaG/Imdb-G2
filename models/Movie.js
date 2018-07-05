@@ -18,7 +18,7 @@ class Movie {
        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies'+id,{
            method : 'GET',
            success : (data)=>{
-            this._id = data._id;
+            this._id = data.id;
             this.Title = data.Title;
             this.Year = data.Year;
             this.Runtime = data.Runtime;
