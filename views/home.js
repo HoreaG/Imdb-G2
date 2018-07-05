@@ -12,10 +12,13 @@ window.onload = ()=>{
           const posterContainer = document.createElement('div');
           posterContainer.setAttribute('class', 'poster-container');
           movieElement.appendChild(posterContainer);
-          const moviePoster = document.createElement('img');
-          moviePoster.setAttribute('src',  movieList.items[i].Poster);
-          moviePoster.setAttribute('class', 'movie-poster');
-          posterContainer.appendChild(moviePoster);
+          //posterContainer.style.height = "500px";
+          posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+          posterContainer.style.backgroundSize = "64% 100%"
+//          const moviePoster = document.createElement('img');
+//          moviePoster.setAttribute('src',  movieList.items[i].Poster);
+//          moviePoster.setAttribute('class', 'movie-poster');
+//          posterContainer.appendChild(moviePoster);
           const movieTitle  = document.createElement('p');
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(movieTitle);
