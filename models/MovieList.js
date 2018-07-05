@@ -12,7 +12,7 @@ class MovieList {
                     const movieItem  = movieData.results[i];
                     
                     const movieModel = new Movie();
-
+                    movieModel._id = movieItem._id;
                     movieModel.Title = movieItem.Title;
                     movieModel.Year = movieItem.Year;
                     movieModel.Runtime = movieItem.Runtime;
