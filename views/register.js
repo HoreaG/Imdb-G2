@@ -6,6 +6,10 @@ window.onload=function(){
   
    submit.addEventListener("click", function(event){
    	event.preventDefault();
+   	if(form.password.value===form.passConf.value){	
       newAuth.createAuth(form);
+   	}else{
+   		console.log("passwords dont match")
+   	}
     })
 }
