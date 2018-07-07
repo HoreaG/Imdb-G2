@@ -28,6 +28,7 @@
 //          moviePoster.setAttribute('class', 'movie-poster');
 //          posterContainer.appendChild(moviePoster);
           const movieTitle  = document.createElement('p');
+          movieTitle.setAttribute('class', 'movie-title');
           ancor_element.appendChild(movieTitle);
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(ancor_element);
