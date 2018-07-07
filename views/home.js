@@ -11,8 +11,6 @@
           const movieElement = document.createElement('div');
           const ancor_element = document.createElement('a');
           ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
-          
-          
           movieElement.setAttribute('class', 'movie-element');
           moviesGlobalContainer.appendChild(movieElement);
           const posterContainer = document.createElement('div');
@@ -20,7 +18,11 @@
           movieElement.appendChild(posterContainer);
           //posterContainer.style.height = "500px";
           posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
-          posterContainer.style.backgroundSize = "64% 100%"
+          posterContainer.style.backgroundSize = "100% 100%";
+          const imdbRating = document.createElement('p');
+          imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+          imdbRating.setAttribute('class', 'imdb-rating');
+          posterContainer.appendChild(imdbRating);
 //          const moviePoster = document.createElement('img');
 //          moviePoster.setAttribute('src',  movieList.items[i].Poster);
 //          moviePoster.setAttribute('class', 'movie-poster');
@@ -36,6 +38,7 @@
       }
   }).catch(()=>{
       console.log('Eroare afisare');
-  });
+  })
+     
  });
    
