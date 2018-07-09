@@ -1,3 +1,4 @@
+
 window.onload = function(){
     var current_id = getUrlParameter('postId');
     var current_movie = new Movie();
