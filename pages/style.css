@@ -189,3 +189,13 @@ form {
     background-size: 28%;
     background-size: 190px;
 }
+footer {
+    background-color: orange;
+}
+.copyright,a {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    margin: 0;
+    color: white;
+}
