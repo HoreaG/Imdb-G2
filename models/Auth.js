@@ -10,7 +10,5 @@ Auth.prototype.createAuth=function (form){
     $(form).find("input[name]").each(function (index, node) {
         formData[node.name] = node.value;
     });
-    $.post(url, formData).then(function (response){
-      console.log(response);
-    })
+    return $.post(url, formData);
 }
