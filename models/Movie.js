@@ -38,12 +38,10 @@ class Movie {
  }
 
  deleteMovie(id) {
-
-  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +"5acf8c967327000021063f8c",{
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +"5b4304ce787f3c002180b122",{
     method: 'DELETE',
     success: (response)=>{
-      console.log('You deleted movie');
-      
+      console.log('You deleted movie');     
     },
     error: ()=> {
       console.log('Error!!');

@@ -19,8 +19,15 @@ window.onload = ()=>{
           const movieTitle  = document.createElement('p');
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(movieTitle);
+          
+          
+
       }
   }).catch(()=>{
       console.log('Eroare afisare');
   });
+
+ const m =new Movie();
+ document.getElementById("clickMe").addEventListener("click", m.deleteMovie, false);
+  
 }
