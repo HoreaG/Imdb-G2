@@ -1,6 +1,6 @@
 class Movie {
   constructor(){
-    this._id = null;
+    this._id = "";
     this.Title = "";
     this.Year = "";
     this.Runtime = "";
@@ -15,7 +15,7 @@ class Movie {
   }
 
   MovieFetchData(id){
-   return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies'+id,{
+   return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'+id,{
      method : 'GET',
      success : (data)=>{
       this._id = data.id;
@@ -28,16 +28,16 @@ class Movie {
       this.Poster = data.Poster;
       this.imdbRating = data.imdbRating;
       this.imdbVotes = data.imdbVotes;
-      this.imdbID = data.imdbID;
+      this.imdbID = data.mdbID;
       this.Type = data.Type;
     },
     error :()=>{
      console.log('Error on showing the detail movie');
    }
-  });
+ });
  }
 
- deleteMovie(id) {
+deleteMovie(id) {
   return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +"5b4304ce787f3c002180b122",{
     method: 'DELETE',
     success: (response)=>{
@@ -47,6 +47,6 @@ class Movie {
       console.log('Error!!');
     } 
   });
-  }
- 
+}
+
 }
