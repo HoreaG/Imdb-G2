@@ -2,46 +2,83 @@
 window.onload = function(){
     var current_id = getUrlParameter('postId');
     var current_movie = new Movie();
+     const editBtn = document.getElementById('edit-btn');
+    const submitBtn = document.getElementById('updateChanges');
+    const editModal = document.getElementById('edit-modal');
+    
+    const hiddenMovieId = document.getElementById('movie-id');
+    const movieTitle = document.getElementById('movie-title');
+    const movieYear = document.getElementById('movie-year');
+    const movieRuntime = document.getElementById('movie-runtime');
+    const movieGenre = document.getElementById('movie-genre');
+    const movieLanguage = document.getElementById('movie-language');
+    const movieCountry = document.getElementById('movie-country');
+    const moviePoster = document.getElementById('movie-poster');
+    const movieImdbRating = document.getElementById('movie-imdb-rating');
+    const movieImdbVotes = document.getElementById('movie-imdb-votes');
+    const movieImdbId = document.getElementById('movie-imdb-id');
+    const movieType = document.getElementById('movie-type');
 
     current_movie.MovieFetchData(current_id).then(()=>{
         const title = document.getElementById('movie_title');
         title.innerHTML = current_movie.Title;
-    });
-    const editBtn = document.getElementById('edit-btn');
-    const submitBtn = document.getElementById('updateChanges');
-    const editModal = document.getElementById('edit-modal');
+    }).then(function(){
+   
+    
     editBtn.addEventListener('click', function(e) {
         editModal.style.display = "block";
-        const hiddenMovieId = document.getElementById('movie-id');
         hiddenMovieId.value = current_id;
-        const movieTitle = document.getElementById('movie-title');
         movieTitle.value = current_movie.Title;
-        const movieYear = document.getElementById('movie-year');
         movieYear.value = current_movie.Year;
-        const movieRuntime = document.getElementById('movie-runtime');
         movieRuntime.value = current_movie.Runtime;
-        const movieGenre = document.getElementById('movie-genre');
         movieGenre.value = current_movie.Genre;
-        const movieLanguage = document.getElementById('movie-language');
         movieLanguage.value = current_movie.Language;
-        const movieCountry = document.getElementById('movie-country');
         movieCountry.value = current_movie.Country;
-        const moviePoster = document.getElementById('movie-poster');
         moviePoster.value = current_movie.Poster;
-        const movieImdbRating = document.getElementById('movie-imdb-rating');
         movieImdbRating.value  = current_movie.imdbRating;
-        const movieImdbVotes = document.getElementById('movie-imdb-votes');
         movieImdbVotes.value = current_movie.imdbVotes;
-        const movieImdbId = document.getElementById('movie-imdb-id');
         movieImdbId.value = current_movie.imdbID;
-        console.log(current_movie.imdbID);
-        const movieType = document.getElementById('movie-type');
+        console.log(current_movie);
         movieType.value = current_movie.Type;
-    });
-    submitBtn.addEventListener('click', function(e) {
-        editModal.style.display = "none";
     })
+        }).then(function(){
+    submitBtn.addEventListener('click', function(e) {
+        
+        const updateId = hiddenMovieId.value;
+        const updateTitle = movieTitle.value;
+        const updateYear = movieYear.value;
+        const updateRuntime = movieRuntime.value;
+        const updateGenre = movieGenre.value;
+        const updateLanguage = movieLanguage.value;
+        const updateCountry = movieCountry.value;
+        const updatePoster = moviePoster.value;
+        const updateImdbRating = movieImdbRating.value;
+        const updateImdbVotes = movieImdbVotes.value;
+        const updateImdbId = movieImdbId.value;
+        const updateType = movieType.value;
+        
+        const updateData = {
+            Title: updateTitle,
+            Year: updateYear,
+            Runtime: updateRuntime,
+            Genre: updateGenre,
+            Language: updateLanguage,
+            Country: updateCountry,
+            Poster: updatePoster,
+            imdbRaring: updateImdbRating,
+            imdbVotes: updateImdbVotes,
+            imdbID: updateImdbId,
+            Type: updateType
+        }
+        console.log(updateData);
+        editModal.style.display = "none";
+        
+        MovieUpdate(updateId, updateData);
+        
+    });
+        });
 }
+                
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');

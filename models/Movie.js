@@ -37,6 +37,21 @@ class Movie {
  });
  }
 
+  MovieUpdate(updateId, updateData) {
+    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'+updateId, {
+        method: 'PUT',
+        data: updateData,
+        success: function(response) {
+            console.log('Response =', response);
+            
+        },
+        error :()=>{
+            console.log('Error: Movie was not edited!');
+        }
+    });
+      console.log("Can't see me!");
+  }
+    
 deleteMovie(id) {
   return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +"5b4304ce787f3c002180b122",{
     method: 'DELETE',
