@@ -28,7 +28,9 @@ window.onload = function(){
         console.log(current_movie.imdbID);
     }).then(function(){
    
-    
+   
+    document.getElementById("delete-btn").addEventListener("click", current_movie.deleteMovie, false);
+
     editBtn.addEventListener('click', function(e) {
         modalContainer.style.display = "block";
         editModal.setAttribute('class', 'modal-content');
