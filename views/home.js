@@ -1,4 +1,27 @@
  $(document).ready(()=>{
+    const searchList = new SearchList();
+    const searchBtn = document.getElementById('search-btn');	
+     
+    searchBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const input = document.getElementById('searchBar').value;
+        console.log("CLICK: ", input );
+        searchMovies(input);
+        
+    });
+
+    function searchMovies (input){
+        searchList.fetchMovieList(input).then((item)=>{
+            console.log('RES', item.results);
+        for( let i = 0; i < item.results.length; i++){
+            console.log("Result of search: ",item.results[i]);
+         }
+       });
+    }
+
+
+
+
     const movieList = new MovieList();
     movieList.fetchDataList().then(()=>{
       const globalContainer = document.getElementById('ceva');

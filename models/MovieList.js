@@ -7,7 +7,7 @@ class MovieList {
         return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies',{
             method : 'GET',
             success : (movieData)=>{
-                console.log(movieData.results);
+                //console.log(movieData.results);
                 for( let i = 0; i < movieData.results.length; i++){
                     const movieItem  = movieData.results[i];
                     
@@ -26,7 +26,7 @@ class MovieList {
                     movieModel.Type = movieItem.Type;
 
                     this.items.push(movieModel);
-                    console.log(movieModel);
+                   // console.log(movieModel);
                 }
 
             
@@ -37,3 +37,4 @@ class MovieList {
         });
     }
 }
+
