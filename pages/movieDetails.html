@@ -11,7 +11,12 @@
     <script src="../models/Movie.js"></script>
     <script src="../models/MovieList.js"></script>
     <script src="../views/movieDetails.js"></script>
+<<<<<<< HEAD
+    <script src="../views/home.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+=======
+    <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
+>>>>>>> 4b76b3ac87578038c80ab9a36b85146676067767
     <link rel="stylesheet" href="../css/edit.modal-style.css">
     <title>Movie</title>
 </head>
@@ -38,10 +43,10 @@
         <div id="close-container">
             <span id="close-modal">Close X</span>
         </div>
-        <div id="edit-modal">
+        <form id="edit-modal">
             <p id="edit-modal-title">Edit movie details</p>
             <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
-            <p>Title <input type="text" placeholder="Title" title="movie-title" value="" id="movie-title"></p>
+            <p>Title <input type="text" placeholder="Title" pattern="[a-z]" title="movie-title" value="" id="movie-title"></p>
             <p>Year <input type="number" placeholder="Year" title="year" value="" id="movie-year"></p>
             <p>Runtime <input type="text" placeholder="Runtime" title="runtime" value="" id="movie-runtime"></p>
             <p>Genre <input type="text" placeholder="Genre" title="genre" value="" id="movie-genre"></p>
@@ -53,7 +58,7 @@
             <p>imdb ID <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id"></p>
             <p>Type <input type="text" placeholder="Type" title="type" value="" id="movie-type"></p>
             <input type="submit" value="save changes" id="updateChanges">
-        </div>
+        </form>
     </section>
     
 </body>

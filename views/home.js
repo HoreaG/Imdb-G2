@@ -55,7 +55,6 @@
           ancor_element.appendChild(movieTitle);
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(ancor_element);
-
       }
   }).catch(()=>{
       console.log('Eroare afisare');
@@ -63,7 +62,8 @@
   });
 
  const m =new Movie();
- document.getElementById("clickMe").addEventListener("click", m.deleteMovie, false);
+ document.getElementById("delete-btn").addEventListener("click", m.deleteMovie, false);
+
   
 });
      

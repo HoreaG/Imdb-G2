@@ -198,10 +198,15 @@ form {
 footer {
     background-color: orange;
 }
-.copyright,a {
+.copyright {
+    width: 40%;
+    height: 30%;
     display: flex;
     justify-content: center;
     font-size: larger;
     margin: 0;
     color: white;
 }
+
+
+

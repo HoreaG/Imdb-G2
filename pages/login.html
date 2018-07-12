@@ -2,29 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Register</title>
+	<title>Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<link rel=stylesheet href="../css/register.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="../models/Auth.js"></script>
-	<script src="../views/register.js"></script>
+	<script src="../views/login.js"></script>
 </head>
 <body>
 	<div class="container">
 	    <div class="row">
 	        <div id="movieForm">
-	        	<h3>Sign up for an account</h3>
-				<p>Signing up for an account is free and easy. Fill out the form below to get started. JavaScript is required to continue.</p>
+	        	<h3>Login</h3>
 				<div class="problems">
 					<hr>
 					<ul>
-						<h4><i class="fas fa-exclamation-triangle"></i> There was an error processing your signup</h3>
+						<h4><i class="fas fa-exclamation-triangle"></i> There was an error processing your login</h3>
 						<li id="missUser">Username is required</li>
-						<li id="existUser">This username already exists</li>
 						<li id="missPass">Password is required</li>
-						<li id="shortPass">Password needs to be at least 4 characters long</li>
-						<li id="noMatchPass">Passwords don't match</li>
+						<li id="existUser">User not found</li>
 					</ul>
 					<hr>
 				</div>
@@ -36,10 +33,7 @@
 	                    <input class="form-control" type="password" name="password" placeholder="Password">
 	                </div>
 	                <div class="form-group">
-	                    <input class="form-control" type="password" name="passConf" placeholder="Confirm password">
-	                </div>
-	                <div class="form-group">
-	                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+	                    <button class="btn btn-lg btn-primary btn-block">Login!</button>
 	                </div>
 	            </form>
 	            <a href="home.html">Go Back</a>

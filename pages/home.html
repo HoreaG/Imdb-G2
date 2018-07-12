@@ -20,19 +20,31 @@
                 </div>
                 <div id="navAndSearch">
                     <div id="inlineNav">
+                    <a href="about">About</a>
+                    <a href="new-movies">New Movies</a>
+                    <a href="top-rated">Top Rated Movies</a>
+                    <div class="dropdown">
+                        <button class="dropbtn" type="button" data-toggle="dropdown">Dropdown
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header" style="visibility: hidden">Logout</li>
+                        </ul>
+                    </div>
+                    </div>
                         <a href="about">About</a>
                         <a href="new-movies">New Movies</a>
                         <a href="top-rated">Top Rated Movies</a></div>
                         <form>
                             <input id="searchBar"  type="text" name="search" placeholder="Search...">
-                <button id="search-btn">Search</button>                   
-    </form>
+                            <button id="search-btn">Search</button>                   
+                        </form>
                 </div>
             </nav>
         </header>
-        <button id="clickMe">Delete</button>
-        
-        <section class="col-lg-8" id="content">
+       <section class="col-lg-8" id="content">
             <div class="container">
                     <h2>Most recent 10 movies</h2>
                 <div class="most-recent-movies" id="ceva">
@@ -43,7 +55,8 @@
             </div>
         </section>
         <footer class="footer">
-           <p class="copyright">Copyright © | <a href="https://www.facebook.com/">Facebook </a>| <a href="https://twitter.com/twitter"> Twitter</a></p> 
+           <div class="copyright">Copyright © 
+            <a href="https://www.facebook.com/"><img src="http://thaifernflora.myspecies.info/sites/thaifernflora.myspecies.info/files/facebookgrey.png" class="facebook"></a><a href="https://twitter.com/twitter"> <img src="http://www.sycall.fr/hotelparimis/assets/img/logo/twitter2.png" class="facebook"></a></div> 
         </footer>
     </body>
 </html>
