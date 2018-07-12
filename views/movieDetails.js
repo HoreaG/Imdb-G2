@@ -4,7 +4,9 @@ window.onload = function(){
     var current_movie = new Movie();
      const editBtn = document.getElementById('edit-btn');
     const submitBtn = document.getElementById('updateChanges');
+    const modalContainer = document.getElementById('edit-modal-container')
     const editModal = document.getElementById('edit-modal');
+    const closeModal = document.getElementById('close-modal');
     
     const hiddenMovieId = document.getElementById('movie-id');
     const movieTitle = document.getElementById('movie-title');
@@ -26,7 +28,8 @@ window.onload = function(){
    
     
     editBtn.addEventListener('click', function(e) {
-        editModal.style.display = "block";
+        modalContainer.style.display = "block";
+        editModal.setAttribute('class', 'modal-content');
         hiddenMovieId.value = current_id;
         movieTitle.value = current_movie.Title;
         movieYear.value = current_movie.Year;
@@ -42,6 +45,10 @@ window.onload = function(){
         movieType.value = current_movie.Type;
     })
         }).then(function(){
+        closeModal.addEventListener('click', function(){
+            modalContainer.style.display = 'none';
+        })
+    }).then(function(){
     submitBtn.addEventListener('click', function(e) {
         
         const updateId = hiddenMovieId.value;
@@ -71,7 +78,7 @@ window.onload = function(){
             Type: updateType
         }
         console.log(updateData);
-        editModal.style.display = "none";
+        modalContainer.style.display = "none";
         
         MovieUpdate(updateId, updateData);
         
