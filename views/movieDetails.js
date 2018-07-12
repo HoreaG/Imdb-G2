@@ -1,5 +1,6 @@
 
 window.onload = function(){
+    
     var current_id = getUrlParameter('postId');
     var current_movie = new Movie();
      const editBtn = document.getElementById('edit-btn');
@@ -45,7 +46,7 @@ window.onload = function(){
         console.log(current_movie);
         movieType.value = current_movie.Type;
     })
-        }).then(function(){
+        }).then(()=>{
         closeModal.addEventListener('click', function(){
             modalContainer.style.display = 'none';
         })
@@ -81,7 +82,7 @@ window.onload = function(){
         console.log(updateData);
         modalContainer.style.display = "none";
         
-        MovieUpdate(updateId, updateData);
+        current_movie.MovieUpdate(updateId, updateData);
         
     });
         });
