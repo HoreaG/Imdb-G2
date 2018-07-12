@@ -6,6 +6,6 @@ h3, p{
 	text-align: center;
 }
 
-#missUser, #existUser, #missPass, #noMatchPass, .problems{
+#missUser, #shortPass, #existUser, #missPass, #noMatchPass, .problems{
 	display:none;
 }

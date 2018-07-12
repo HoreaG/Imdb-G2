@@ -28,7 +28,7 @@ class Movie {
       this.Poster = data.Poster;
       this.imdbRating = data.imdbRating;
       this.imdbVotes = data.imdbVotes;
-      this.imdbID = data.mdbID;
+      this.imdbID = data.imdbID;
       this.Type = data.Type;
     },
     error :()=>{

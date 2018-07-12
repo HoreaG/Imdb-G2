@@ -25,6 +25,7 @@ window.onload = function(){
     current_movie.MovieFetchData(current_id).then(()=>{
         const title = document.getElementById('movie_title');
         title.innerHTML = current_movie.Title;
+        console.log(current_movie.imdbID);
     }).then(function(){
    
     
