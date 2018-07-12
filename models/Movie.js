@@ -28,7 +28,7 @@ class Movie {
       this.Poster = data.Poster;
       this.imdbRating = data.imdbRating;
       this.imdbVotes = data.imdbVotes;
-      this.imdbID = data.mdbID;
+      this.imdbID = data.imdbID;
       this.Type = data.Type;
     },
     error :()=>{
@@ -58,7 +58,7 @@ deleteMovie(id) {
         } else {
             $('.message').text("You canceled the action!");
         }
-  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +"5b473e5210a33e0021c1c429",{
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +id,{
     method: 'DELETE',
     success: (response)=>{
       console.log('You deleted movie');     

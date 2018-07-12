@@ -1,5 +1,6 @@
 
 window.onload = function(){
+    
     var current_id = getUrlParameter('postId');
     var current_movie = new Movie();
      const editBtn = document.getElementById('edit-btn');
@@ -24,6 +25,7 @@ window.onload = function(){
     current_movie.MovieFetchData(current_id).then(()=>{
         const title = document.getElementById('movie_title');
         title.innerHTML = current_movie.Title;
+        console.log(current_movie.imdbID);
     }).then(function(){
    
     
@@ -44,7 +46,7 @@ window.onload = function(){
         console.log(current_movie);
         movieType.value = current_movie.Type;
     })
-        }).then(function(){
+        }).then(()=>{
         closeModal.addEventListener('click', function(){
             modalContainer.style.display = 'none';
         })
@@ -80,7 +82,7 @@ window.onload = function(){
         console.log(updateData);
         modalContainer.style.display = "none";
         
-        MovieUpdate(updateId, updateData);
+        current_movie.MovieUpdate(updateId, updateData);
         
     });
         });
