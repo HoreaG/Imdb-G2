@@ -35,21 +35,27 @@
     <button id="edit-btn">Edit</button>
     <button id="delete-btn">Delete</button>
     <div id="movie_details"></div>
-    <div id="edit-modal">
-        <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
-        <input type="text" placeholder="Title" title="movie-title" value="" id="movie-title">
-        <input type="number" placeholder="Year" title="year" value="" id="movie-year">
-        <input type="text" placeholder="Runtime" title="runtime" value="" id="movie-runtime">
-        <input type="text" placeholder="Genre" title="genre" value="" id="movie-genre">
-        <input type="text" placeholder="Language" title="language" value="" id="movie-language">
-        <input type="text" placeholder="Country" title="country" value="" id="movie-country">
-        <input type="url" placeholder="Poster(image url adress)" title="poster" value="" id="movie-poster">
-        <input type="number" placeholder="imdb Rating" title="imdb-rating" value="" id="movie-imdb-rating">
-        <input type="text" placeholder="imdb Votes" title="imdb-votes" value="" id="movie-imdb-votes">
-        <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id">
-        <input type="text" placeholder="Type" title="type" value="" id="movie-type">
-        <input type="submit" value="Save changes" id="updateChanges">
-    </div>
+    <section id="edit-modal-container">
+        <div id="close-container">
+            <span id="close-modal">Close X</span>
+        </div>
+        <div id="edit-modal">
+            <p id="edit-modal-title">Edit movie details</p>
+            <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
+            <p>Title <input type="text" placeholder="Title" title="movie-title" value="" id="movie-title"></p>
+            <p>Year <input type="number" placeholder="Year" title="year" value="" id="movie-year"></p>
+            <p>Runtime <input type="text" placeholder="Runtime" title="runtime" value="" id="movie-runtime"></p>
+            <p>Genre <input type="text" placeholder="Genre" title="genre" value="" id="movie-genre"></p>
+            <p>Language <input type="text" placeholder="Language" title="language" value="" id="movie-language"></p>
+            <p>Country <input type="text" placeholder="Country" title="country" value="" id="movie-country"></p>
+            <p>Poster <input type="url" placeholder="Poster(image url adress)" title="poster" value="" id="movie-poster"></p>
+            <p>imdb Rating <input type="number" placeholder="imdb Rating" title="imdb-rating" value="" id="movie-imdb-rating"></p>
+            <p>imdb Votes <input type="text" placeholder="imdb Votes" title="imdb-votes" value="" id="movie-imdb-votes"></p>
+            <p>imdb ID <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id"></p>
+            <p>Type <input type="text" placeholder="Type" title="type" value="" id="movie-type"></p>
+            <input type="submit" value="save changes" id="updateChanges">
+        </div>
+    </section>
     
 </body>
 </html>
