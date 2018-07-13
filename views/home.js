@@ -2,8 +2,18 @@
  $(document).ready(()=>{
      
     const searchList = new SearchList();
-    const searchBtn = document.getElementById('search-btn');	
-     
+    const searchBtn = document.getElementById('search-btn');
+    
+    const authToken = localStorage.getItem('loggedUser');
+    console.log('Auth Token:', authToken);
+    if(authToken !== null) {
+        const searchBarForm = document.getElementById('searchBar-form');
+        const displayAddBtn = document.createElement('button');
+        displayAddBtn.setAttribute('id', 'add-btn');
+        displayAddBtn.innerHTML = "Add new movie";
+        
+        searchBarForm.parentNode.insertBefore(displayAddBtn, searchBarForm.nextSibling);
+    }
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const input = document.getElementById('searchBar').value;
