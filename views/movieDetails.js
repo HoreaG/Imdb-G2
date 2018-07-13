@@ -1,9 +1,12 @@
 
 window.onload = function(){
     
-    var current_id = getUrlParameter('postId');
-    var current_movie = new Movie();
-     const editBtn = document.getElementById('edit-btn');
+    const authToken = localStorage.getItem('loggedUser');
+    console.log('Token:', authToken);
+    
+    const current_id = getUrlParameter('postId');
+    const current_movie = new Movie();
+    const editBtn = document.getElementById('edit-btn');
     const submitBtn = document.getElementById('updateChanges');
     const modalContainer = document.getElementById('edit-modal-container')
     const editModal = document.getElementById('edit-modal');
@@ -83,7 +86,7 @@ window.onload = function(){
         console.log(updateData);
         modalContainer.style.display = "none";
         
-        current_movie.MovieUpdate(updateId, updateData);
+        current_movie.MovieUpdate(updateId, updateData, authToken);
         
     });
         });

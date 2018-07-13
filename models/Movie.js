@@ -37,9 +37,12 @@ class Movie {
  });
  }
 
-  MovieUpdate(updateId, updateData) {
+  MovieUpdate(updateId, updateData, authToken) {
     return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'+updateId, {
         method: 'PUT',
+        beforeSend: function(request) {
+            request.setRequestHeader("x-auth-token", authToken);
+        },
         data: updateData,
         success: function(response) {
             console.log('Response =', response);
