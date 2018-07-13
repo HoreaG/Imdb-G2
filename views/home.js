@@ -1,3 +1,4 @@
+
  $(document).ready(()=>{
      
     const searchList = new SearchList();
@@ -58,10 +59,6 @@
       console.log('Eroare afisare');
 
   });
-
- const m =new Movie();
- 
-
   
 });
      
