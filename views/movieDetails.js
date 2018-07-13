@@ -3,6 +3,17 @@ window.onload = function(){
     
     const authToken = localStorage.getItem('loggedUser');
     console.log('Token:', authToken);
+    if(authToken !== null) {
+        const body = document.getElementById('body');
+        const displayEditBtn = document.createElement('button');
+        displayEditBtn.setAttribute('id', 'edit-btn');
+        displayEditBtn.innerHTML = 'Edit movie details';
+        body.appendChild(displayEditBtn);
+        const displayDeleteBtn = document.createElement('button');
+        displayDeleteBtn.setAttribute('id', 'delete-btn');
+        displayDeleteBtn.innerHTML = 'Delete movie';
+        body.appendChild(displayDeleteBtn);
+    }
     
     const current_id = getUrlParameter('postId');
     const current_movie = new Movie();
