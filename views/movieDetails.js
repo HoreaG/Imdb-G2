@@ -31,7 +31,6 @@ window.onload = function(){
     
     editBtn.addEventListener('click', function(e) {
         modalContainer.style.display = "block";
-        editModal.setAttribute('class', 'modal-content');
         hiddenMovieId.value = current_id;
         movieTitle.value = current_movie.Title;
         movieYear.value = current_movie.Year;

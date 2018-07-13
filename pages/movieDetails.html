@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
+    <link rel="stylesheet" href="../css/edit.modal-style.css">
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -12,9 +16,6 @@
     <script src="../models/MovieList.js"></script>
     <script src="../views/movieDetails.js"></script>
     <script src="../views/home.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
-    <link rel="stylesheet" href="../css/edit.modal-style.css">
     <title>Movie</title>
 </head>
 <body id="body" class="col-lg-12">
@@ -40,7 +41,7 @@
         <div id="close-container">
             <span id="close-modal">Close X</span>
         </div>
-        <form id="edit-modal">
+        <form id="edit-modal" class="modal-content">
             <p id="edit-modal-title">Edit movie details</p>
             <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
             <p>Title <input type="text" placeholder="Title" pattern="[a-z]" title="movie-title" value="" id="movie-title"></p>

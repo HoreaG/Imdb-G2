@@ -208,5 +208,8 @@ footer {
 }
 .facebook {
     width: 20%;
-  height: 10%;
+    height: 10%;
+}
+#add-btn {
+    width:10%;
 }

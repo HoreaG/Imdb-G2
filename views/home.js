@@ -1,4 +1,5 @@
  $(document).ready(()=>{
+     
     const searchList = new SearchList();
     const searchBtn = document.getElementById('search-btn');	
      
@@ -18,9 +19,6 @@
          }
        });
     }
-
-
-
 
     const movieList = new MovieList();
     movieList.fetchDataList().then(()=>{
@@ -62,7 +60,7 @@
   });
 
  const m =new Movie();
- document.getElementById("delete-btn").addEventListener("click", m.deleteMovie, false);
+ 
 
   
 });

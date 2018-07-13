@@ -5,12 +5,12 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/add.modal-style.css">
         <script src="../models/Movie.js"></script>
         <script src="../models/MovieList.js"></script>
         <script src="../models/SearchList.js"></script>
         <script src="../views/home.js"></script>
-        <!-- <script src="../views/movieDetails.js"></script> -->
-        <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
     </head>
     <body id="body" class="col-lg-12">
         <header>
@@ -22,27 +22,54 @@
                     <div id="inlineNav">
                         <a href="about">About</a>
                         <a href="new-movies">New Movies</a>
-                        <a href="top-rated">Top Rated Movies</a></div>
-                        <form>
-                            <input id="searchBar"  type="text" name="search" placeholder="Search...">
-                            <button id="search-btn">Search</button>                   
-                        </form>
+                        <a href="top-rated">Top Rated Movies</a>
+                    </div>
+                    <form>
+                        <input id="searchBar"  type="text" name="search" placeholder="Search...">
+                        <button id="search-btn">Search</button>
+                    </form>
+                    <button id="add-btn">Add</button>
                 </div>
             </nav>
         </header>
-       <section class="col-lg-8" id="content">
+        <section class="col-lg-8" id="content">
             <div class="container">
-                    <h2>Most recent 10 movies</h2>
-                    <div class="most-recent-movies" id="ceva">
-                        <article>
-                            <a href="#" class="image-featured"><img src="" alt="" /></a>
-                        </article>
-                    </div>
+                <h2>Most recent 10 movies</h2>
+                <div class="most-recent-movies" id="ceva">
+                    <article>
+                        <a href="#" class="image-featured"><img src="" alt="" /></a>
+                    </article>
                 </div>
-            </section>
-            <footer class="footer">
-             <div class="copyright">Copyright © 
-                <a href="https://www.facebook.com/"><img src="http://thaifernflora.myspecies.info/sites/thaifernflora.myspecies.info/files/facebookgrey.png" class="facebook"></a><a href="https://twitter.com/twitter"> <img src="http://www.sycall.fr/hotelparimis/assets/img/logo/twitter2.png" class="facebook"></a></div> 
-            </footer>
-        </body>
-        </html>
+            </div>
+        </section>
+        <section id="add-modal-container">
+            <div id="close-container">
+                <span id="close-modal">Close X</span>
+            </div>
+            <form id="add-modal" class="modal-content">
+                <p id="add-modal-title">Add movie</p>
+                <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
+                <p>Title <input type="text" placeholder="Title" pattern="[a-z]" title="movie-title" value="" id="movie-title"></p>
+                <p>Year <input type="number" placeholder="Year" title="year" value="" id="movie-year"></p>
+                <p>Runtime <input type="text" placeholder="Runtime" title="runtime" value="" id="movie-runtime"></p>
+                <p>Genre <input type="text" placeholder="Genre" title="genre" value="" id="movie-genre"></p>
+                <p>Language <input type="text" placeholder="Language" title="language" value="" id="movie-language"></p>
+                <p>Country <input type="text" placeholder="Country" title="country" value="" id="movie-country"></p>
+                <p>Poster <input type="url" placeholder="Poster(image url adress)" title="poster" value="" id="movie-poster"></p>
+                <p>imdb Rating <input type="number" placeholder="imdb Rating" title="imdb-rating" value="" id="movie-imdb-rating"></p>
+                <p>imdb Votes <input type="text" placeholder="imdb Votes" title="imdb-votes" value="" id="movie-imdb-votes"></p>
+                <p>imdb ID <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id"></p>
+                <p>Type <input type="text" placeholder="Type" title="type" value="" id="movie-type"></p>
+                <input type="submit" value="save changes" id="updateChanges">
+            </form>
+        </section>
+        <footer class="footer">
+            <div class="copyright">Copyright © 
+                <a href="https://www.facebook.com/">
+                    <img src="http://thaifernflora.myspecies.info/sites/thaifernflora.myspecies.info/files/facebookgrey.png" class="facebook"></a>
+                <a href="https://twitter.com/twitter">
+                    <img src="http://www.sycall.fr/hotelparimis/assets/img/logo/twitter2.png" class="facebook"></a>
+            </div> 
+        </footer>
+    </body>
+</html>
