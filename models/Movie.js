@@ -72,4 +72,18 @@ deleteMovie(id) {
   });
 }
 
+  newMovie(data){
+    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'),{
+      method : 'POST',
+      data : data,
+      success : (response)=> {
+          this.Title = response.data.Title;
+      },
+
+      error : ()=> {
+        console.log(' erorare');
+      }
+    }
+  }
+
 }
