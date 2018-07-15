@@ -17,6 +17,7 @@ window.onload = function(){
     const current_id = getUrlParameter('postId');
     const current_movie = new Movie();
     const editBtn = document.getElementById('edit-btn');
+    const delBtn = document.getElementById('delete-btn');
     const submitBtn = document.getElementById('updateChanges');
     const modalContainer = document.getElementById('edit-modal-container')
     const editModal = document.getElementById('edit-modal');
@@ -44,23 +45,23 @@ window.onload = function(){
    
     document.getElementById("delete-btn").addEventListener("click", current_movie.deleteMovie, false);
 
-    editBtn.addEventListener('click', function(e) {
-        modalContainer.style.display = "block";
-        hiddenMovieId.value = current_id;
-        movieTitle.value = current_movie.Title;
-        movieYear.value = current_movie.Year;
-        movieRuntime.value = current_movie.Runtime;
-        movieGenre.value = current_movie.Genre;
-        movieLanguage.value = current_movie.Language;
-        movieCountry.value = current_movie.Country;
-        moviePoster.value = current_movie.Poster;
-        movieImdbRating.value  = current_movie.imdbRating;
-        movieImdbVotes.value = current_movie.imdbVotes;
-        movieImdbId.value = current_movie.imdbID;
-        console.log(current_movie);
-        movieType.value = current_movie.Type;
-    })
-        }).then(()=>{
+        editBtn.addEventListener('click', function(e) {
+            modalContainer.style.display = "block";
+            hiddenMovieId.value = current_id;
+            movieTitle.value = current_movie.Title;
+            movieYear.value = current_movie.Year;
+            movieRuntime.value = current_movie.Runtime;
+            movieGenre.value = current_movie.Genre;
+            movieLanguage.value = current_movie.Language;
+            movieCountry.value = current_movie.Country;
+            moviePoster.value = current_movie.Poster;
+            movieImdbRating.value  = current_movie.imdbRating;
+            movieImdbVotes.value = current_movie.imdbVotes;
+            movieImdbId.value = current_movie.imdbID;
+            console.log(current_movie);
+            movieType.value = current_movie.Type;
+        })
+    }).then(()=>{
         closeModal.addEventListener('click', function(){
             modalContainer.style.display = 'none';
         })
@@ -99,7 +100,11 @@ window.onload = function(){
         current_movie.MovieUpdate(updateId, updateData, authToken);
         
     });
-        });
+ });
+
+ delBtn.addEventListener('click',()=>{
+    current_movie.deleteMovie(current_id,authToken);
+ });
 }
                 
 
