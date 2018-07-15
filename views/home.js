@@ -3,7 +3,7 @@
      
     const searchList = new SearchList();
     const searchBtn = document.getElementById('search-btn');
-    const add_btn = document.getElementById("add-btn");
+    //const add_btn = document.getElementById("add-btn");
     const modal_container = document.getElementById('add-modal-container');
     const close_modal_add = document.getElementById('close-container');
     
@@ -14,50 +14,54 @@
         const displayAddBtn = document.createElement('button');
         displayAddBtn.setAttribute('id', 'add-btn');
         displayAddBtn.innerHTML = "Add new movie";
-
-        const add_btn = document.getElementById('add-btn');
-        add_btn.addEventListener('click',(e)=>{
-            modal_container.style.display = "block";
-            const add_movie =  new Movie();
-
-            const add_title = document.getElementById('movie-title');
-            const add_year = document.getElementById('movie-year');
-            const add_runtime = document.getElementById('movie-runtime');
-            const add_genre = document.getElementById('movie-genre');
-            const add_language = document.getElementById('movie-language');
-            const add_country = document.getElementById('movie-country');
-            const add_poster = document.getElementById('movie-poster');
-            const add_imdb_rating = document.getElementById('movie-imdb-rating');
-            const add_imdb_votes = document.getElementById('movie-imdb-votes');
-            const add_imdb_id = document.getElementById('movie-imdb-id');
-            const add_type = document.getElementById('movie-type');
-            const add_to_database = document.getElementById('updateChanges');
-
-            
-            add_to_database.addEventListener('click',()=>{
-                const addObj = {
-                    Title: add_title.value,
-                    Year: add_year.value,
-                    Runtime:add_runtime.value,
-                    Genre: add_genre.value,
-                    Language: add_language.value,
-                    Country: add_country.value,
-                    Poster: add_poster.value,
-                    imdbRaring: add_imdb_rating.value,
-                    imdbVotes: add_imdb_votes.value,
-                    imdbID: add_imdb_id.value,
-                    Type: add_type.value
-                }
-               
-                add_movie.newMovie(addObj,authToken);
-            });
-
-            
-
-        });
+        
+       
         
         searchBarForm.parentNode.insertBefore(displayAddBtn, searchBarForm.nextSibling);
     }
+    const add_btn = document.getElementById('add-btn');
+    add_btn.addEventListener('click',(e)=>{
+        modal_container.style.display = "block";
+        close_modal_add.addEventListener('click',()=>{
+            modal_container.style.display = "none";
+        })
+        const new_movie =  new Movie();
+
+        const add_title = document.getElementById('movie-title');
+        const add_year = document.getElementById('movie-year');
+        const add_runtime = document.getElementById('movie-runtime');
+        const add_genre = document.getElementById('movie-genre');
+        const add_language = document.getElementById('movie-language');
+        const add_country = document.getElementById('movie-country');
+        const add_poster = document.getElementById('movie-poster');
+        const add_imdb_rating = document.getElementById('movie-imdb-rating');
+        const add_imdb_votes = document.getElementById('movie-imdb-votes');
+        const add_imdb_id = document.getElementById('movie-imdb-id');
+        const add_type = document.getElementById('movie-type');
+        const add_to_database = document.getElementById('updateChanges');
+
+        
+        add_to_database.addEventListener('click',()=>{
+            const addObj = {
+                Title: add_title.value,
+                Year: add_year.value,
+                Runtime:add_runtime.value,
+                Genre: add_genre.value,
+                Language: add_language.value,
+                Country: add_country.value,
+                Poster: add_poster.value,
+                imdbRaring: add_imdb_rating.value,
+                imdbVotes: add_imdb_votes.value,
+                imdbID: add_imdb_id.value,
+                Type: add_type.value
+            }
+           
+            new_movie.addMovie(addObj,authToken);
+        });
+
+        
+
+    });
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const input = document.getElementById('searchBar').value;
@@ -92,7 +96,7 @@
           moviesGlobalContainer.appendChild(movieElement);
           const posterContainer = document.createElement('div');
           posterContainer.setAttribute('class', 'poster-container');
-          movieElement.appendChild(posterContainer);
+          ancor_element.appendChild(posterContainer);
           //posterContainer.style.height = "500px";
           posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
           posterContainer.style.backgroundSize = "100% 100%";
