@@ -1,4 +1,3 @@
-
 window.onload = function(){
     
     const authToken = localStorage.getItem('loggedUser');

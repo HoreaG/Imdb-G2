@@ -5,7 +5,7 @@
     const searchBtn = document.getElementById('search-btn');
     
     const authToken = localStorage.getItem('loggedUser');
-    console.log('Auth Token:', authToken);
+    console.log('AuthToken:', authToken);
     if(authToken !== null) {
         const searchBarForm = document.getElementById('searchBar-form');
         const displayAddBtn = document.createElement('button');
