@@ -2,6 +2,7 @@ window.onload = function(){
     
     const authToken = localStorage.getItem('loggedUser');
     console.log('Token:', authToken);
+    const user_name = localStorage.getItem('username');
     if(authToken !== null) {
         const body = document.getElementById('body');
         const displayEditBtn = document.createElement('button');
@@ -12,6 +13,23 @@ window.onload = function(){
         displayDeleteBtn.setAttribute('id', 'delete-btn');
         displayDeleteBtn.innerHTML = 'Delete movie';
         body.appendChild(displayDeleteBtn);
+        const logRegContainer = document.getElementById('log-reg');
+        const loginDisplay = document.getElementById('login-anch');
+        const registerDisplay = document.getElementById('register-anch');
+        const userName = document.createElement('p');
+        userName.setAttribute('id', 'user-name');
+        userName.innerHTML = 'Hello, ' + user_name;
+        loginDisplay.style.display = 'none';
+        registerDisplay.style.display = 'none';
+        logRegContainer.appendChild(userName);
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('href', 'home.html')
+        logOutBtn.setAttribute('id', 'logout-btn');
+        logOutBtn.innerHTML = 'Logout';
+        userName.parentNode.insertBefore(logOutBtn, userName.nextSibling);
+        logOutBtn.addEventListener('click', function(){
+            localStorage.removeItem('loggedUser');
+        });
     }
     
     const current_id = getUrlParameter('postId');
@@ -103,7 +121,7 @@ window.onload = function(){
  });
 
  delBtn.addEventListener('click',()=>{
-    current_movie.deleteMovie(current_id,authToken);
+    current_movie.deleteMovie(current_id, authToken);
  });
 }
                 
