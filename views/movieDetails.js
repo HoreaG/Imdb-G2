@@ -18,6 +18,7 @@ window.onload = function(){
     const current_id = getUrlParameter('postId');
     const current_movie = new Movie();
     const editBtn = document.getElementById('edit-btn');
+    const delBtn = document.getElementById('delete-btn');
     const submitBtn = document.getElementById('updateChanges');
     const modalContainer = document.getElementById('edit-modal-container')
     const editModal = document.getElementById('edit-modal');
@@ -100,7 +101,11 @@ window.onload = function(){
         current_movie.MovieUpdate(updateId, updateData, authToken);
         
     });
-        });
+ });
+
+ delBtn.addEventListener('click',()=>{
+    current_movie.deleteMovie(current_id,authToken);
+ });
 }
                 
 

@@ -55,15 +55,19 @@ class Movie {
       console.log("Can't see me!");
   }
     
-deleteMovie(id) {
-  if (confirm("Are you sure you want to delete this movie?")) {
-            $('.message').text("You deleted a movie!");
-        } else {
-            $('.message').text("You canceled the action!");
-        }
+deleteMovie(id,pass) {
+  // if (confirm("Are you sure you want to delete this movie?")) {
+  //           $('.message').text("You deleted a movie!");
+  //       } else {
+  //           $('.message').text("You canceled the action!");
+  //       }
   return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +id,{
     method: 'DELETE',
+    beforeSend : function(request){
+      request.setRequestHeader('X-Auth-Token', pass );
+    },
     success: (response)=>{
+      window.location.href = "../pages/home.html";
       console.log('You deleted movie');     
     },
     error: ()=> {
