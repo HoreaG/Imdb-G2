@@ -63,13 +63,14 @@
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const input = document.getElementById('searchBar').value;
+        const filterList = document.getElementById('filter-list').value;
         console.log("CLICK: ", input );
-        searchMovies(input);
+        searchMovies(filterList, input);
         
     });
 
-    function searchMovies (input){
-        searchList.fetchMovieList(input).then((item)=>{
+    function searchMovies (filterList, input){
+        searchList.fetchMovieList(filterList, input).then((item)=>{
             console.log('RES', item.results);
         for( let i = 0; i < item.results.length; i++){
             console.log("Result of search: ",item.results[i]);

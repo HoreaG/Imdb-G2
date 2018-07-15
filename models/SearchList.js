@@ -3,8 +3,8 @@ class SearchList {
        
         this.item = [];
     }
-    fetchMovieList(text){
-        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies?Title='+text,{
+    fetchMovieList(filter,text){
+        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies?'+filter+'='+text,{
             method : 'GET',
             success : (searchData)=>{
                 console.log("response", searchData.results);
