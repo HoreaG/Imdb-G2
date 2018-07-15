@@ -8,6 +8,7 @@
     const close_modal_add = document.getElementById('close-container');
     
     const authToken = localStorage.getItem('loggedUser');
+    const user_name = localStorage.getItem('username');
     console.log('AuthToken:', authToken);
     if(authToken !== null) {
         const h2MostRecentMvies = document.getElementById('h2-most-recent-movies');
@@ -16,7 +17,26 @@
         displayAddBtn.setAttribute('id', 'add-btn');
         displayAddBtn.innerHTML = "Add new movie";
         h2MostRecentMvies.parentNode.insertBefore(displayAddBtn, h2MostRecentMvies.nextSibling);
-    }
+        const logRegContainer = document.getElementById('log-reg');
+        const loginDisplay = document.getElementById('login-anch');
+        const registerDisplay = document.getElementById('register-anch');
+        const userName = document.createElement('p');
+        userName.setAttribute('id', 'user-name');
+        userName.innerHTML = 'Hello, ' + user_name;
+        loginDisplay.style.display = 'none';
+        registerDisplay.style.display = 'none';
+        logRegContainer.appendChild(userName);
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('href', 'home.html')
+        logOutBtn.setAttribute('id', 'logout-btn');
+        logOutBtn.innerHTML = 'Logout';
+        userName.parentNode.insertBefore(logOutBtn, userName.nextSibling);
+        logOutBtn.addEventListener('click', function(){
+            localStorage.removeItem('loggedUser');
+        });
+        
+        
+    
     const add_btn = document.getElementById('add-btn');
     add_btn.addEventListener('click',(e)=>{
         modal_container.style.display = "block";
@@ -60,6 +80,7 @@
         
 
     });
+        }
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const input = document.getElementById('searchBar').value;
