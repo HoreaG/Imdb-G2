@@ -37,32 +37,35 @@ class Movie {
  });
  }
 
-  MovieUpdate(updateId, updateData, authToken) {
-    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'+updateId, {
-        method: 'PUT',
-        beforeSend: function(request) {
-            request.setRequestHeader("x-auth-token", authToken);
-        },
-        data: updateData,
-        success: function(response) {
-            console.log('Response =', response);
-            
-        },
-        error :()=>{
-            console.log('Error: Movie was not edited!');
-        }
-    });
-      console.log("Can't see me!");
-  }
-    
-deleteMovie(id) {
-  if (confirm("Are you sure you want to delete this movie?")) {
-            $('.message').text("You deleted a movie!");
-        } else {
-            $('.message').text("You canceled the action!");
-        }
-  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +id,{
+ MovieUpdate(updateId, updateData, authToken) {
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/'+updateId, {
+    method: 'PUT',
+    beforeSend: function(request) {
+      request.setRequestHeader("x-auth-token", authToken);
+    },
+    data: updateData,
+    success: function(response) {
+      console.log('Response =', response);
+
+    },
+    error :()=>{
+      console.log('Error: Movie was not edited!');
+    }
+  });
+  console.log("Can't see me!");
+}
+
+deleteMovie(current_id, authToken) {
+  // if (confirm("Are you sure you want to delete this movie?")) {
+  //   $('.message').text("You deleted a movie!");
+  // } else {
+  //   $('.message').text("You canceled the action!");
+  // }
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +current_id,{
     method: 'DELETE',
+    beforeSend: function(request) {
+      request.setRequestHeader("x-auth-token", authToken);
+    },
     success: (response)=>{
       console.log('You deleted movie');     
     },
@@ -71,5 +74,4 @@ deleteMovie(id) {
     } 
   });
 }
-
 }
