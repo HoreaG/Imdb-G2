@@ -10,14 +10,12 @@
     const authToken = localStorage.getItem('loggedUser');
     console.log('AuthToken:', authToken);
     if(authToken !== null) {
+        const h2MostRecentMvies = document.getElementById('h2-most-recent-movies');
         const searchBarForm = document.getElementById('searchBar-form');
         const displayAddBtn = document.createElement('button');
         displayAddBtn.setAttribute('id', 'add-btn');
         displayAddBtn.innerHTML = "Add new movie";
-        
-       
-        
-        searchBarForm.parentNode.insertBefore(displayAddBtn, searchBarForm.nextSibling);
+        h2MostRecentMvies.parentNode.insertBefore(displayAddBtn, h2MostRecentMvies.nextSibling);
     }
     const add_btn = document.getElementById('add-btn');
     add_btn.addEventListener('click',(e)=>{
@@ -96,7 +94,7 @@
           moviesGlobalContainer.appendChild(movieElement);
           const posterContainer = document.createElement('div');
           posterContainer.setAttribute('class', 'poster-container');
-          ancor_element.appendChild(posterContainer);
+          movieElement.appendChild(posterContainer);
           //posterContainer.style.height = "500px";
           posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
           posterContainer.style.backgroundSize = "100% 100%";
