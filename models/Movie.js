@@ -55,18 +55,19 @@ class Movie {
   console.log("Can't see me!");
 }
 
-deleteMovie(current_id, authToken) {
-  // if (confirm("Are you sure you want to delete this movie?")) {
-  //   $('.message').text("You deleted a movie!");
-  // } else {
-  //   $('.message').text("You canceled the action!");
-  // }
-  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +current_id,{
+deleteMovie(id,pass) {
+  if (confirm("Are you sure you want to delete this movie?")) {
+    $('.message').text("You deleted a movie!");
+  } else {
+    $('.message').text("You canceled the action!");
+  }
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/' +id,{
     method: 'DELETE',
-    beforeSend: function(request) {
-      request.setRequestHeader("x-auth-token", authToken);
+    beforeSend : function(request){
+      request.setRequestHeader('X-Auth-Token', pass );
     },
     success: (response)=>{
+      window.location.href = "../pages/home.html";
       console.log('You deleted movie');     
     },
     error: ()=> {
@@ -74,4 +75,47 @@ deleteMovie(current_id, authToken) {
     } 
   });
 }
+
+addMovie(Obj,pass){
+  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies'),{
+    method : 'POST',
+    beforeSend : function(request){
+      request.setRequestHeader('X-Auth-Token', pass );
+    },
+    data : Obj,
+      // {
+      //   Title : Obj.Title,
+      //   Year : Obj.Year,
+      //   Runtime : Obj.Runtime,
+      //   Genre : Obj.Genre,
+      //   Language : Obj.Language,
+      //   Country : Obj.Coutry,
+      //   Poster : Obj.Poster,
+      //   imdbRating : Obj.imdbRating,
+      //   imdbVotes : Obj.imdbVotes,
+      //   imdbID : Obj.imdbID,
+      //   Type : Obj.Type
+      // },
+      success : function(response){
+        console.log('salut');
+        this.Title = response.Title;
+        this.Year = response.Year;
+        this.Runtime = response.Runtime;
+        this.Genre = response.Genre;
+        this.Language = response.Language;
+        this.Country = response.Country;
+        this.Poster = response.Poster;
+        this.imdbRating = response.imdbRating;
+        this.imdbVotes = response.imdbVotes;
+        this.imdbID = response.imdbID;
+        this.Type = response.Type;
+
+      },
+
+      error : (error)=> {
+        console.log(error,' erorare');
+      }
+    }
+  }
+
 }

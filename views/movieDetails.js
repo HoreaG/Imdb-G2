@@ -1,8 +1,8 @@
-
 window.onload = function(){
     
     const authToken = localStorage.getItem('loggedUser');
     console.log('Token:', authToken);
+    const user_name = localStorage.getItem('username');
     if(authToken !== null) {
         const body = document.getElementById('body');
         const displayEditBtn = document.createElement('button');
@@ -13,11 +13,29 @@ window.onload = function(){
         displayDeleteBtn.setAttribute('id', 'delete-btn');
         displayDeleteBtn.innerHTML = 'Delete movie';
         body.appendChild(displayDeleteBtn);
+        const logRegContainer = document.getElementById('log-reg');
+        const loginDisplay = document.getElementById('login-anch');
+        const registerDisplay = document.getElementById('register-anch');
+        const userName = document.createElement('p');
+        userName.setAttribute('id', 'user-name');
+        userName.innerHTML = 'Hello, ' + user_name;
+        loginDisplay.style.display = 'none';
+        registerDisplay.style.display = 'none';
+        logRegContainer.appendChild(userName);
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('href', 'home.html')
+        logOutBtn.setAttribute('id', 'logout-btn');
+        logOutBtn.innerHTML = 'Logout';
+        userName.parentNode.insertBefore(logOutBtn, userName.nextSibling);
+        logOutBtn.addEventListener('click', function(){
+            localStorage.removeItem('loggedUser');
+        });
     }
     
     const current_id = getUrlParameter('postId');
     const current_movie = new Movie();
     const editBtn = document.getElementById('edit-btn');
+    const delBtn = document.getElementById('delete-btn');
     const submitBtn = document.getElementById('updateChanges');
     const modalContainer = document.getElementById('edit-modal-container')
     const editModal = document.getElementById('edit-modal');
@@ -45,23 +63,23 @@ window.onload = function(){
    
     document.getElementById("delete-btn").addEventListener("click", current_movie.deleteMovie, false);
 
-    editBtn.addEventListener('click', function(e) {
-        modalContainer.style.display = "block";
-        hiddenMovieId.value = current_id;
-        movieTitle.value = current_movie.Title;
-        movieYear.value = current_movie.Year;
-        movieRuntime.value = current_movie.Runtime;
-        movieGenre.value = current_movie.Genre;
-        movieLanguage.value = current_movie.Language;
-        movieCountry.value = current_movie.Country;
-        moviePoster.value = current_movie.Poster;
-        movieImdbRating.value  = current_movie.imdbRating;
-        movieImdbVotes.value = current_movie.imdbVotes;
-        movieImdbId.value = current_movie.imdbID;
-        console.log(current_movie);
-        movieType.value = current_movie.Type;
-    })
-        }).then(()=>{
+        editBtn.addEventListener('click', function(e) {
+            modalContainer.style.display = "block";
+            hiddenMovieId.value = current_id;
+            movieTitle.value = current_movie.Title;
+            movieYear.value = current_movie.Year;
+            movieRuntime.value = current_movie.Runtime;
+            movieGenre.value = current_movie.Genre;
+            movieLanguage.value = current_movie.Language;
+            movieCountry.value = current_movie.Country;
+            moviePoster.value = current_movie.Poster;
+            movieImdbRating.value  = current_movie.imdbRating;
+            movieImdbVotes.value = current_movie.imdbVotes;
+            movieImdbId.value = current_movie.imdbID;
+            console.log(current_movie);
+            movieType.value = current_movie.Type;
+        })
+    }).then(()=>{
         closeModal.addEventListener('click', function(){
             modalContainer.style.display = 'none';
         })
@@ -100,7 +118,11 @@ window.onload = function(){
         current_movie.MovieUpdate(updateId, updateData, authToken);
         
     });
-        });
+ });
+
+ delBtn.addEventListener('click',()=>{
+    current_movie.deleteMovie(current_id, authToken);
+ });
 }
                 
 

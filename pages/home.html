@@ -20,20 +20,31 @@
                 </div>
                 <div id="navAndSearch">
                     <div id="inlineNav">
-                        <a href="about">About</a>
-                        <a href="new-movies">New Movies</a>
+                        <a href="about.html">About Us</a>
                         <a href="top-rated">Top Rated Movies</a>
+                        <div id="log-reg">
+                            <a id="login-anch" href="login.html">Login</a>
+                            <a id="register-anch" href="register.html">Register</a>
+                        </div>
                     </div>
                     <form id="searchBar-form">
-                        <input id="searchBar"  type="text" name="search" placeholder="Search...">
+                        <input id="searchBar" type="text" name="search" placeholder="Search...">
                         <button id="search-btn">Search</button>
                     </form>
+                    <select id="filter-list">
+                        <option value="Title">Title</option>
+                        <option value="Genre">Genre</option>
+                        <option value="Year">Year</option>
+                    </select>
                 </div>
             </nav>
         </header>
-        <section class="col-lg-8" id="content">
+        <section class="col-8" id="content">
             <div class="container">
-                <h2>Most recent 10 movies</h2>
+                <div id="h2-addBtn-container">
+                    <h2 id="h2-most-recent-movies">Most recent movies</h2>
+
+                </div>
                 <div class="most-recent-movies" id="ceva">
                     <article>
                         <a href="#" class="image-featured"><img src="" alt="" /></a>
@@ -46,9 +57,9 @@
                 <span id="close-modal">Close X</span>
             </div>
             <form id="add-modal" class="modal-content">
-                <p id="add-modal-title">Add movie</p>
+                <p id="add-modal-title">Add new movie</p>
                 <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
-                <p>Title <input type="text" placeholder="Title" pattern="[a-z]" title="movie-title" value="" id="movie-title"></p>
+                <p>Title <input type="text" placeholder="Title"  title="movie-title" value="" id="movie-title"></p>
                 <p>Year <input type="number" placeholder="Year" title="year" value="" id="movie-year"></p>
                 <p>Runtime <input type="text" placeholder="Runtime" title="runtime" value="" id="movie-runtime"></p>
                 <p>Genre <input type="text" placeholder="Genre" title="genre" value="" id="movie-genre"></p>
@@ -59,7 +70,7 @@
                 <p>imdb Votes <input type="text" placeholder="imdb Votes" title="imdb-votes" value="" id="movie-imdb-votes"></p>
                 <p>imdb ID <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id"></p>
                 <p>Type <input type="text" placeholder="Type" title="type" value="" id="movie-type"></p>
-                <input type="submit" value="save changes" id="updateChanges">
+                <input type="submit" value="add movie" id="updateChanges">
             </form>
         </section>
         <footer class="footer">
