@@ -55,9 +55,29 @@ window.onload = function(){
     const movieType = document.getElementById('movie-type');
 
     current_movie.MovieFetchData(current_id).then(()=>{
-        const title = document.getElementById('movie_title');
+        const poster = document.getElementById('movie-details-poster-container');
+        poster.style.backgroundImage = `url("${current_movie.Poster}")`;
+        poster.style.backgroundSize = "100% 100%";
+        const title = document.getElementById('movie-title-detPage');
         title.innerHTML = current_movie.Title;
-        console.log(current_movie.imdbID);
+        const year = document.getElementById('year-span');
+        year.innerHTML = current_movie.Year;
+        const runtime = document.getElementById('runtime-span');
+        runtime.innerHTML = current_movie.Runtime;
+        const genre = document.getElementById('genre-span');
+        genre.innerHTML = current_movie.Genre;
+        const language = document.getElementById('language-span');
+        language.innerHTML = current_movie.Language;
+        const country = document.getElementById('country-span');
+        country.innerHTML = current_movie.Country;
+        const imdb_rating = document.getElementById('imdbRating-span');
+        imdb_rating.innerHTML = current_movie.imdbRating;
+        const imdb_votes = document.getElementById('imdbVotes-span');
+        imdb_votes.innerHTML = current_movie.imdbVotes;
+        const imdb_id = document.getElementById('imdbId-span');
+        imdb_id.innerHTML = current_movie.imdbID;
+        const type = document.getElementById('type-span');
+        type.innerHTML = current_movie.Type;
     }).then(function(){
    
    

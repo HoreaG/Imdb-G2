@@ -101,11 +101,20 @@
     
 
     const movieList = new MovieList();
+   
     movieList.fetchDataList().then(()=>{
       const globalContainer = document.getElementById('ceva');
       const moviesGlobalContainer = document.createElement('article');
       moviesGlobalContainer.setAttribute('class', 'movies-global-container');
       globalContainer.appendChild(moviesGlobalContainer);
+      const pages = document.getElementById('pages');
+      const next_btn = document.createElement('a');
+      console.log(movieList.next);
+      next_btn.classList.add('page');
+      next_btn.innerHTML = "next";
+      next_btn.setAttribute('href',movieList.next);
+      pages.appendChild(next_btn);
+      //console.log(movieList.next);
       
       for( let i = 0; i < movieList.items.length; i++){
           console.log(movieList.items[i].Title);
@@ -134,6 +143,8 @@
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(ancor_element);
       }
+
+     
   }).catch(()=>{
       console.log('Eroare afisare');
 

@@ -97,19 +97,18 @@ addMovie(Obj,pass){
       //   Type : Obj.Type
       // },
       success : function(response){
-        console.log('salut');
-        this.Title = response.Title;
-        this.Year = response.Year;
-        this.Runtime = response.Runtime;
-        this.Genre = response.Genre;
-        this.Language = response.Language;
-        this.Country = response.Country;
-        this.Poster = response.Poster;
-        this.imdbRating = response.imdbRating;
-        this.imdbVotes = response.imdbVotes;
-        this.imdbID = response.imdbID;
-        this.Type = response.Type;
-
+        console.log(response);
+          this.Title = response.Title;
+          this.Year = response.Year;
+          this.Runtime = response.Runtime;
+          this.Genre = response.Genre;
+          this.Language = response.Language;
+          this.Country = response.Country;
+          this.Poster = response.Poster;
+          this.imdbRating = response.imdbRating;
+          this.imdbVotes = response.imdbVotes;
+          this.imdbID = response.imdbID;
+          this.Type = response.Type;
       },
 
       error : (error)=> {

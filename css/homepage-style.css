@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/V7QIfdTcgikqxmxok/film-reel-motion-background_nzezcntql__F0000.png');
+    background-image: url('https://i.ytimg.com/vi/JIJtCHuRXHw/maxresdefault.jpg');
     background-size: 100%;
 }
 #body {
@@ -295,4 +295,14 @@ footer {
 }
 #h2-addBtn-container {
     display:flex;
+}
+.pagination {
+width:30%;
+margin:auto;
+}
+.page{
+    text-align: center;
+    color:white !important;
+    display: inline;
+    padding : 1em;
 }
