@@ -267,18 +267,33 @@ form {
     background-color: white;
 }
 footer {
-    background-color: orange;
+    background-color: #bc440d;
 }
 .copyright,a {
     display: flex;
     justify-content: center;
-    font-size: larger;
     margin: 0;
-    color: white;
+    color: black;
 }
 .facebook {
-    width: 20%;
-    height: 10%;
+    width: 20px;
+    height: 18px;
+    margin: auto;
+}
+.twitter {
+    width: 20px;
+    height: 22px;
+    margin: auto;
+}
+.twitter:hover{
+    border-radius:20px;
+    background-color: white;
+    padding: 4px;
+}
+.facebook:hover{
+    border-radius:20px;
+    background-color: white;
+    padding: 4px;
 }
 #add-btn {
     width:160px;
