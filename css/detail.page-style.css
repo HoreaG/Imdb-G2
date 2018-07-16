@@ -1,0 +1,19 @@
+#movie-details-container {
+    margin: 0 auto;
+    background-color:darkred;
+    overflow: auto;
+}
+#movie-title-detPage {
+    width:100%;
+    text-align: center;
+}
+#movie-details-poster-container {
+    width: 40%;
+    padding-top: 60%;
+    border: 1px solid white;
+    float: left;
+}
+#all-movie-details {
+    width: 50%;
+    float:left;
+}
