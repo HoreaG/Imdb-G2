@@ -59,7 +59,8 @@
         const add_to_database = document.getElementById('updateChanges');
 
         
-        add_to_database.addEventListener('click',()=>{
+        add_to_database.addEventListener('click',(e)=>{
+            console.log('click');
             const addObj = {
                 Title: add_title.value,
                 Year: add_year.value,
@@ -73,7 +74,7 @@
                 imdbID: add_imdb_id.value,
                 Type: add_type.value
             }
-           
+           e.preventDefault();
             new_movie.addMovie(addObj,authToken);
         });
 

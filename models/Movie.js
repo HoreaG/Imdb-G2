@@ -77,7 +77,7 @@ class Movie {
   }
 
   addMovie(Obj,pass){
-    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies'),{
+    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies',{
       method : 'POST',
       beforeSend : function(request){
       request.setRequestHeader('X-Auth-Token', pass );
@@ -109,13 +109,12 @@ class Movie {
           this.imdbVotes = response.imdbVotes;
           this.imdbID = response.imdbID;
           this.Type = response.Type;
-          
       },
 
       error : (error)=> {
         console.log(error,' erorare');
       }
-    }
+    });
   }
 
 }
