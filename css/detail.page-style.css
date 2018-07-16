@@ -1,11 +1,12 @@
 #movie-details-container {
     margin: 0 auto;
-    background-color:darkred;
+    background-color:rgba(0, 0, 0, 0.96);
     overflow: auto;
 }
 #movie-title-detPage {
     width:100%;
     text-align: center;
+    color: antiquewhite;
 }
 #movie-details-poster-container {
     width: 40%;
@@ -14,6 +15,28 @@
     float: left;
 }
 #all-movie-details {
+    width: 60%;
+    float:left;
+}
+#parags {
     width: 50%;
     float:left;
+    text-align: center;
+}
+#spans {
+    width: 50%;
+    float:right;
+    text-align: center;
+}
+.det-parags {
+    color: dodgerblue;
+}
+.det-spans {
+    color:orangered;
+}
+.det-parags:nth-child(2n-1) {
+    background-color: rgba(225, 225, 225, 0.5);;
+}
+.det-spans:nth-child(2n-1) {
+    background-color: rgba(225, 225, 225, 0.5);;
 }
