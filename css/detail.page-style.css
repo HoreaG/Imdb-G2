@@ -15,8 +15,9 @@
     float: left;
 }
 #all-movie-details {
-    width: 60%;
+    width: 45%;
     float:left;
+    margin: 0 7.5%;
 }
 #parags {
     width: 50%;
