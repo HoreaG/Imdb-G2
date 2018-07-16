@@ -2,12 +2,16 @@ class MovieList {
     constructor(){
        
         this.items = [];
+        this.next = null;
+        this.prev = null;
     }
     fetchDataList(){
         return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/',{
             method : 'GET',
             success : (movieData)=>{
-                console.log(movieData.pagination);
+                //console.log(movieData);
+
+                
                 for( let i = 0; i < movieData.results.length; i++){
                     const movieItem  = movieData.results[i];
                     
@@ -29,7 +33,7 @@ class MovieList {
                    // console.log(movieModel);
                 }
 
-                
+                this.next = movieData.pagination.links.next;
             
             },
         error : () => {
