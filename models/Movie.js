@@ -76,10 +76,10 @@ deleteMovie(id,pass) {
   });
 }
 
-addMovie(Obj,pass){
-  return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies'),{
-    method : 'POST',
-    beforeSend : function(request){
+  addMovie(Obj,pass){
+    return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies',{
+      method : 'POST',
+      beforeSend : function(request){
       request.setRequestHeader('X-Auth-Token', pass );
     },
     data : Obj,
@@ -114,7 +114,7 @@ addMovie(Obj,pass){
       error : (error)=> {
         console.log(error,' erorare');
       }
-    }
+    });
   }
 
 }
