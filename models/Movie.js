@@ -97,7 +97,7 @@ class Movie {
       //   Type : Obj.Type
       // },
       success : function(response){
-        console.log('salut');
+        console.log(response);
           this.Title = response.Title;
           this.Year = response.Year;
           this.Runtime = response.Runtime;

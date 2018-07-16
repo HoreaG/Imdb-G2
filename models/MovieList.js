@@ -4,10 +4,10 @@ class MovieList {
         this.items = [];
     }
     fetchDataList(){
-        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies',{
+        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/',{
             method : 'GET',
             success : (movieData)=>{
-                //console.log(movieData.results);
+                console.log(movieData.pagination);
                 for( let i = 0; i < movieData.results.length; i++){
                     const movieItem  = movieData.results[i];
                     
@@ -29,6 +29,7 @@ class MovieList {
                    // console.log(movieModel);
                 }
 
+                
             
             },
         error : () => {
@@ -36,5 +37,6 @@ class MovieList {
         }
         });
     }
+   
 }
 

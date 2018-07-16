@@ -296,3 +296,13 @@ footer {
 #h2-addBtn-container {
     display:flex;
 }
+.pagination {
+width:30%;
+margin:auto;
+}
+.page{
+    text-align: center;
+    color:white !important;
+    display: inline;
+    padding : 1em;
+}
