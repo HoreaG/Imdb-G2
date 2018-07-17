@@ -5,8 +5,8 @@ class MovieList {
         this.next = null;
         this.prev = null;
     }
-    fetchDataList(){
-        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/',{
+    fetchDataList(t,s){
+        return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/?take='+ t + '&skip='+ s,{
             method : 'GET',
             success : (movieData)=>{
                 //console.log(movieData);

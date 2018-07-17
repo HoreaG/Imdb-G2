@@ -103,8 +103,10 @@
     
 
     const movieList = new MovieList();
+    const perPage = 10;
+    let skip = 0;
    
-    movieList.fetchDataList().then(()=>{
+    movieList.fetchDataList(perPage,skip).then(()=>{
       const globalContainer = document.getElementById('ceva');
       const moviesGlobalContainer = document.createElement('article');
       moviesGlobalContainer.setAttribute('class', 'movies-global-container');
@@ -117,6 +119,8 @@
       next_btn.setAttribute('href',movieList.next);
       pages.appendChild(next_btn);
       //console.log(movieList.next);
+
+      
       
       for( let i = 0; i < movieList.items.length; i++){
           console.log(movieList.items[i].Title);
