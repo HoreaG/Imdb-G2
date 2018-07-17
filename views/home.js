@@ -190,10 +190,6 @@
             imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
             imdbRating.setAttribute('class', 'imdb-rating');
             posterContainer.appendChild(imdbRating);
-  //          const moviePoster = document.createElement('img');
-  //          moviePoster.setAttribute('src',  movieList.items[i].Poster);
-  //          moviePoster.setAttribute('class', 'movie-poster');
-  //          posterContainer.appendChild(moviePoster);
             const movieTitle  = document.createElement('p');
             movieTitle.setAttribute('class', 'movie-title');
             ancor_element.appendChild(movieTitle);

@@ -148,7 +148,6 @@ nav a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: black;
 }
 .movie-element {
     width: 20%;
@@ -157,6 +156,7 @@ nav a:hover {
     display:flex;
     flex-direction: column;
     border: 1px solid orange;
+    background-color:black;
 }
 .movie-element a {
     margin: auto;
