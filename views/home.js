@@ -12,11 +12,12 @@
     console.log('AuthToken:', authToken);
     if(authToken !== null) {
         const h2MostRecentMvies = document.getElementById('h2-most-recent-movies');
+        const topRatedMovies = document.getElementById('top-rated-movies');
         const searchBarForm = document.getElementById('searchBar-form');
-        const displayAddBtn = document.createElement('button');
+        const displayAddBtn = document.createElement('a');
         displayAddBtn.setAttribute('id', 'add-btn');
         displayAddBtn.innerHTML = "Add new movie";
-        h2MostRecentMvies.parentNode.insertBefore(displayAddBtn, h2MostRecentMvies.nextSibling);
+        topRatedMovies.parentNode.insertBefore(displayAddBtn, topRatedMovies.nextSibling);
         const logRegContainer = document.getElementById('log-reg');
         const loginDisplay = document.getElementById('login-anch');
         const registerDisplay = document.getElementById('register-anch');
