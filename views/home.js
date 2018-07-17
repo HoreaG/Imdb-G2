@@ -164,11 +164,9 @@ prev_btn.addEventListener('click',()=>{
     const global_container = document.getElementById('ceva');
     const movies_items = document.getElementById('movies-global-container');
     global_container.removeChild(movies_items);
-    movieList.getPages().then(()=>{
-        console.log(movieList);
-    });
-
-    console.log(movieList.pagination);
+    
+    
+    
 
     // movieList.fetchDataList(skip).then(()=>{
     //     const globalContainer = document.getElementById('ceva');
@@ -227,7 +225,8 @@ prev_btn.addEventListener('click',()=>{
     
     global_container.removeChild(movies_items);
    
-    
+    const page =  movieList.page;
+    console.log(page);
     
     movieList.fetchDataList(skip).then(()=>{
         const globalContainer = document.getElementById('ceva');
