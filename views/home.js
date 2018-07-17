@@ -155,7 +155,7 @@
       console.log('Eroare afisare');
 
   });
-
+// paginare
   next_btn.addEventListener('click',()=>{
     skip = current_page * 10;
     movieList.fetchDataList(skip).then(()=>{
