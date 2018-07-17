@@ -11,8 +11,9 @@
     flex-direction: column;
     color:white;
     width:310px;
-    margin: 15px auto;
+    margin: 30px auto 0 auto;
     background-color: rgba(50, 55, 0, 0.9);
+    border-radius: 4px;
 }
 .modal-content p:first-of-type {
     display: flex;
@@ -23,13 +24,15 @@
     align-self:flex-end;
     color: orange;
     z-index: 2;
-    padding: 10px 0 0 0;
+    padding: 0px 0 0 0;
+    margin: 0.75rem 0;
 }
 .modal-content input {
     background-color:cornsilk;
     display:flex;
     margin: 0 10px 0 5px; 
     height: 25px;
+    border-radius: 4px;
 }
 #add-modal-title {
     background-color: black;
@@ -42,6 +45,7 @@
     font-weight: bold;
     font-variant: small-caps;
     letter-spacing: 1px;
+    border-radius: 4px;
 }
 #updateChanges {
     width:100%;
@@ -53,6 +57,11 @@
     font-weight: bold;
     letter-spacing: 1px;
     font-variant:small-caps;
+    border-radius: 4px;
+}
+#updateChanges:hover {
+    background-color: black;
+    color: white;
 }
 #close-container {
     width:100%;
@@ -60,7 +69,7 @@
 #close-modal {
     position:fixed;
     right:0px;
-    font-size: 22px;
+    font-size: 20px;
     color:white;
     margin:0 ;
     padding: 0 5px;

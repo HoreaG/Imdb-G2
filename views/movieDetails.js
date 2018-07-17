@@ -5,14 +5,15 @@ window.onload = function(){
     const user_name = localStorage.getItem('username');
     if(authToken !== null) {
         const body = document.getElementById('body');
+        const buttonContainer = document.getElementById('buttons-container');
         const displayEditBtn = document.createElement('button');
         displayEditBtn.setAttribute('id', 'edit-btn');
-        displayEditBtn.innerHTML = 'Edit movie details';
-        body.appendChild(displayEditBtn);
+        displayEditBtn.innerHTML = 'Edit';
+        buttonContainer.appendChild(displayEditBtn);
         const displayDeleteBtn = document.createElement('button');
         displayDeleteBtn.setAttribute('id', 'delete-btn');
-        displayDeleteBtn.innerHTML = 'Delete movie';
-        body.appendChild(displayDeleteBtn);
+        displayDeleteBtn.innerHTML = 'Delete';
+        buttonContainer.appendChild(displayDeleteBtn);
         const logRegContainer = document.getElementById('log-reg');
         const loginDisplay = document.getElementById('login-anch');
         const registerDisplay = document.getElementById('register-anch');
@@ -55,7 +56,7 @@ window.onload = function(){
     const movieType = document.getElementById('movie-type');
 
     current_movie.MovieFetchData(current_id).then(()=>{
-        const poster = document.getElementById('movie-details-poster-container');
+        const poster = document.getElementById('movie-poster-container');
         poster.style.backgroundImage = `url("${current_movie.Poster}")`;
         poster.style.backgroundSize = "100% 100%";
         const title = document.getElementById('movie-title-detPage');
