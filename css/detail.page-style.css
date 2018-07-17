@@ -1,5 +1,6 @@
 #movie-details-container {
     margin: 0 auto;
+    padding: 0;
     background-color:rgba(0, 0, 0, 0.85);
     overflow: auto;
     border-radius: 10px;
@@ -24,16 +25,31 @@
     border-radius: 4px;
     margin-bottom: 4%;
 }
-#all-movie-details {
+#details-buttons-container {
     width:50%;
     float:left;
 /*    margin: 0 7.5%;*/
     display:flex;
     flex-direction: column;
     flex-flow: column;
-    justify-content: center;
+    justify-content:space-around;
     align-self: stretch;
     margin-bottom: 4%;
+}
+}
+#all-movie-details {
+    width:100%;
+    float:left;
+/*    margin: 0 7.5%;*/
+    display:flex;
+    flex-direction: column;
+}
+#buttons-container {
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:5px;
 }
 .div-container-for-parags-and-spans {
     display:flex;
@@ -64,10 +80,21 @@
     margin:1%;
     
 }
-/*
-.det-parags:nth-child(2n-1) {
-    background-color: rgba(225, 225, 225, 0.5);;
+#edit-btn, #delete-btn {
+    width:20%;
+    height: 25px;
+    padding:0;
+    border-radius: 4px;
+    background-color: dodgerblue;
 }
-.det-spans:nth-child(2n-1) {
-    background-color: rgba(225, 225, 225, 0.5);;
-}*/
+/*
+#delete-btn {
+    width:20%;
+    height: 20px;
+    padding:0;
+    margin:10% 0 0 0;
+}
+*/
+.footer {
+    margin-top: 20px;
+}
