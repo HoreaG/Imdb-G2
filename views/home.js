@@ -157,8 +157,10 @@
 
 
   next_btn.addEventListener('click',()=>{
-    // current_page += 1;
-    // skip = (current_page - 1) * 10;
+    const start = current_page * 10;
+    current_page += 1;
+    skip = (current_page - 1) * 10;
+    const end = current_page * 10
     const global_container = document.getElementById('ceva');
     const movies_items = document.getElementById('movies-global-container');
     
@@ -172,28 +174,29 @@
         moviesGlobalContainer.setAttribute('id','movies-global-container');
         globalContainer.appendChild(moviesGlobalContainer);
 
-        console.log(movieList.items.slice(10,12));
-        for( let i = 0; i < movieList.items.slice(10,12).length; i++){
+        const movieListparts = movieList.items.slice(start,end);
+        console.log(movieListparts);
+        for( let i = 0; i < movieListparts.length; i++){
             
             const movieElement = document.createElement('div');
             const ancor_element = document.createElement('a');
-            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
+            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieListparts[i]._id);
             movieElement.setAttribute('class', 'movie-element');
             moviesGlobalContainer.appendChild(movieElement);
             const posterContainer = document.createElement('div');
             posterContainer.setAttribute('class', 'poster-container');
             movieElement.appendChild(posterContainer);
             //posterContainer.style.height = "500px";
-            posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+            posterContainer.style.backgroundImage = `url("${movieListparts[i].Poster}")`;
             posterContainer.style.backgroundSize = "100% 100%";
             const imdbRating = document.createElement('p');
-            imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+            imdbRating.innerHTML = "Rating &nbsp;" + movieListparts[i].imdbRating;
             imdbRating.setAttribute('class', 'imdb-rating');
             posterContainer.appendChild(imdbRating);
             const movieTitle  = document.createElement('p');
             movieTitle.setAttribute('class', 'movie-title');
             ancor_element.appendChild(movieTitle);
-            movieTitle.innerHTML = movieList.items[i].Title;
+            movieTitle.innerHTML = movieListparts[i].Title;
             movieElement.appendChild(ancor_element);
         }
         
