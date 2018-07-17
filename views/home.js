@@ -157,11 +157,11 @@
 
 
   next_btn.addEventListener('click',()=>{
-    
-    skip += 10;
+    // current_page += 1;
+    // skip = (current_page - 1) * 10;
     const global_container = document.getElementById('ceva');
     const movies_items = document.getElementById('movies-global-container');
-
+    
     global_container.removeChild(movies_items);
     
     
@@ -172,9 +172,9 @@
         moviesGlobalContainer.setAttribute('id','movies-global-container');
         globalContainer.appendChild(moviesGlobalContainer);
 
-        
-        for( let i = 0; i < movieList.items.length; i++){
-            console.log(movieList.items[i].Title);
+        console.log(movieList.items.slice(10,12));
+        for( let i = 0; i < movieList.items.slice(10,12).length; i++){
+            
             const movieElement = document.createElement('div');
             const ancor_element = document.createElement('a');
             ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
