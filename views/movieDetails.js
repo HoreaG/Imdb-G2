@@ -55,7 +55,7 @@ window.onload = function(){
     const movieType = document.getElementById('movie-type');
 
     current_movie.MovieFetchData(current_id).then(()=>{
-        const poster = document.getElementById('movie-details-poster-container');
+        const poster = document.getElementById('movie-poster-container');
         poster.style.backgroundImage = `url("${current_movie.Poster}")`;
         poster.style.backgroundSize = "100% 100%";
         const title = document.getElementById('movie-title-detPage');
