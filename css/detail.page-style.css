@@ -1,7 +1,8 @@
 #movie-details-container {
     margin: 0 auto;
-    background-color:rgba(0, 0, 0, 0.96);
+    background-color:rgba(0, 0, 0, 0.8);
     overflow: auto;
+    border-radius: 10px;
 }
 #movie-title-detPage {
     width:100%;
@@ -11,8 +12,10 @@
 #movie-details-poster-container {
     width: 40%;
     padding-top: 60%;
-    border: 1px solid white;
+    border: 1px solid rgba(255,165,0, 0.8);
     float: left;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 #all-movie-details {
     width: 45%;
@@ -35,9 +38,10 @@
 .det-spans {
     color:orangered;
 }
+/*
 .det-parags:nth-child(2n-1) {
     background-color: rgba(225, 225, 225, 0.5);;
 }
 .det-spans:nth-child(2n-1) {
     background-color: rgba(225, 225, 225, 0.5);;
-}
+}*/
