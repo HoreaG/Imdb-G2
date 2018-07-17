@@ -103,25 +103,23 @@
     
 
     const movieList = new MovieList();
-    const perPage = 10;
     let skip = 0;
-   
-    movieList.fetchDataList(perPage,skip).then(()=>{
-      const globalContainer = document.getElementById('ceva');
-      const moviesGlobalContainer = document.createElement('article');
-      moviesGlobalContainer.setAttribute('class', 'movies-global-container');
-      globalContainer.appendChild(moviesGlobalContainer);
-      const pages = document.getElementById('pages');
+    let current_page = 1;
+    console.log(movieList);
+    const pages = document.getElementById('pages');
       const next_btn = document.createElement('a');
       console.log(movieList.next);
       next_btn.classList.add('page');
       next_btn.innerHTML = "next";
-      next_btn.setAttribute('href',movieList.next);
       pages.appendChild(next_btn);
-      //console.log(movieList.next);
-
-      
-      
+   
+    movieList.fetchDataList(skip).then(()=>{
+      const globalContainer = document.getElementById('ceva');
+      const moviesGlobalContainer = document.createElement('article');
+      moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+      moviesGlobalContainer.setAttribute('id','movies-global-container');
+      globalContainer.appendChild(moviesGlobalContainer);
+     
       for( let i = 0; i < movieList.items.length; i++){
           console.log(movieList.items[i].Title);
           const movieElement = document.createElement('div');
@@ -149,11 +147,67 @@
           movieTitle.innerHTML = movieList.items[i].Title;
           movieElement.appendChild(ancor_element);
       }
-
+      
      
   }).catch(()=>{
       console.log('Eroare afisare');
 
+  });
+// paginare
+
+
+  next_btn.addEventListener('click',()=>{
+    
+    skip += 10;
+    const global_container = document.getElementById('ceva');
+    const movies_items = document.getElementById('movies-global-container');
+
+    global_container.removeChild(movies_items);
+    
+    
+    movieList.fetchDataList(skip).then(()=>{
+        const globalContainer = document.getElementById('ceva');
+        const moviesGlobalContainer = document.createElement('article');
+        moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+        moviesGlobalContainer.setAttribute('id','movies-global-container');
+        globalContainer.appendChild(moviesGlobalContainer);
+
+        
+        for( let i = 0; i < movieList.items.length; i++){
+            console.log(movieList.items[i].Title);
+            const movieElement = document.createElement('div');
+            const ancor_element = document.createElement('a');
+            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
+            movieElement.setAttribute('class', 'movie-element');
+            moviesGlobalContainer.appendChild(movieElement);
+            const posterContainer = document.createElement('div');
+            posterContainer.setAttribute('class', 'poster-container');
+            movieElement.appendChild(posterContainer);
+            //posterContainer.style.height = "500px";
+            posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+            posterContainer.style.backgroundSize = "100% 100%";
+            const imdbRating = document.createElement('p');
+            imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+            imdbRating.setAttribute('class', 'imdb-rating');
+            posterContainer.appendChild(imdbRating);
+  //          const moviePoster = document.createElement('img');
+  //          moviePoster.setAttribute('src',  movieList.items[i].Poster);
+  //          moviePoster.setAttribute('class', 'movie-poster');
+  //          posterContainer.appendChild(moviePoster);
+            const movieTitle  = document.createElement('p');
+            movieTitle.setAttribute('class', 'movie-title');
+            ancor_element.appendChild(movieTitle);
+            movieTitle.innerHTML = movieList.items[i].Title;
+            movieElement.appendChild(ancor_element);
+        }
+        
+       
+    }).catch(()=>{
+        console.log('Eroare afisare');
+  
+    });
+  
+    
   });
   
 });
