@@ -105,6 +105,7 @@
     const movieList = new MovieList();
     let skip = 0;
     let current_page = 1;
+    console.log(movieList);
     const pages = document.getElementById('pages');
       const next_btn = document.createElement('a');
       console.log(movieList.next);
@@ -116,12 +117,9 @@
       const globalContainer = document.getElementById('ceva');
       const moviesGlobalContainer = document.createElement('article');
       moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+      moviesGlobalContainer.setAttribute('id','movies-global-container');
       globalContainer.appendChild(moviesGlobalContainer);
-      
      
-
-      
-      
       for( let i = 0; i < movieList.items.length; i++){
           console.log(movieList.items[i].Title);
           const movieElement = document.createElement('div');
@@ -156,12 +154,22 @@
 
   });
 // paginare
+
+
   next_btn.addEventListener('click',()=>{
-    skip = current_page * 10;
+    
+    skip += 10;
+    const global_container = document.getElementById('ceva');
+    const movies_items = document.getElementById('movies-global-container');
+
+    global_container.removeChild(movies_items);
+    
+    
     movieList.fetchDataList(skip).then(()=>{
         const globalContainer = document.getElementById('ceva');
         const moviesGlobalContainer = document.createElement('article');
         moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+        moviesGlobalContainer.setAttribute('id','movies-global-container');
         globalContainer.appendChild(moviesGlobalContainer);
 
         
