@@ -105,7 +105,6 @@
     const movieList = new MovieList();
     let skip = 0;
     let current_page = 1;
-    console.log(movieList);
     const pages = document.getElementById('pages');
       const prev_btn = document.createElement('a');
       const next_btn = document.createElement('a');
@@ -216,10 +215,20 @@ prev_btn.addEventListener('click',()=>{
 
 
   next_btn.addEventListener('click',()=>{
-    const start = current_page * 10;
+    const nrOfPages = movieList.nrPages;
+    console.log(nrOfPages);
+    let start = current_page * 10;
+    
     current_page += 1;
     skip = (current_page - 1) * 10;
-    const end = current_page * 10
+    let end = current_page * 10
+
+    if (current_page > nrOfPages){
+        current_page = 1;
+        start = 0;
+        end = 10;
+        skip = 0;
+    }
     const global_container = document.getElementById('ceva');
     const movies_items = document.getElementById('movies-global-container');
     
@@ -237,12 +246,7 @@ prev_btn.addEventListener('click',()=>{
 
         const movieListparts = movieList.items.slice(start,end);
         console.log(movieListparts);
-        if(movieListparts.length === 0){
-            start = start - 10;
-            end = end - 10;
-            movieList.items.slice(start,end);
-
-        }
+        
         for( let i = 0; i < movieListparts.length; i++){
             
             const movieElement = document.createElement('div');
