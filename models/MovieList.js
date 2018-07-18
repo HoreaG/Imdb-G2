@@ -4,14 +4,16 @@ class MovieList {
         this.items = [];
         this.next = null;
         this.prev = null;
-        this.page = "";
+        this.currentPage = "";
+        this.nrPages = "";
     }
     fetchDataList(s){
         return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/?take=10&skip='+s,{
             method : 'GET',
             success : (movieData)=>{
-                //console.log(movieData.pagination);
-                this.page = movieData.pagination.currentPage;
+                console.log(movieData.pagination);
+                this.currentPage = movieData.pagination.currentPage;
+                this.nrPages = movieData.pagination.numberOfPages;
                 
                 for( let i = 0; i < movieData.results.length; i++){
                     const movieItem  = movieData.results[i];
@@ -34,7 +36,7 @@ class MovieList {
                    // console.log(movieModel);
                 }
 
-                this.next = movieData.pagination.links.next;
+               
             
             },
         error : () => {
