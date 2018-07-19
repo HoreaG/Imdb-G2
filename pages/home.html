@@ -6,27 +6,39 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="../css/homepage-style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/homepageHeader.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/footer.css"/>
         <link rel="stylesheet" type="text/css" href="../css/add.modal-style.css">
         <script src="../models/Movie.js"></script>
+        <script src="../models/pagination.js"></script>
         <script src="../models/MovieList.js"></script>
         <script src="../models/SearchList.js"></script>
         <script src="../views/home.js"></script>
+            <!-- <script> 
+            $(function(){
+              $("#header").load("../includes/header.html"); 
+              $("#footer").load("../includes/footer.html"); 
+            });
+            </script>  -->
     </head>
-    <body id="body" class="col-lg-12">
-        <header>
+    <body id="body" class="col-12">
+        <!-- <div id="header"></div> -->
+        <header id="header" class="col-lg-12 col-md-12 col-sm-12">
             <nav id="nav">
                 <div id="homeLogo">
-                    <a class="home" href="home.html">Home</a>
+                    <a class="home" href="home.html"></a>
                 </div>
                 <div id="navAndSearch">
                     <div id="inlineNav">
-                        <a href="about">About</a>
-                        <a href="new-movies">New Movies</a>
-                        <a href="top-rated">Top Rated Movies</a>
-                        
+                        <a href="about.html">About Us</a>
+                        <a id="top-rated-movies" href="top-rated">Top Rated Movies</a>
+                        <div id="log-reg">
+                            <a id="login-anch" href="login.html">Login</a>
+                            <a id="register-anch" href="register.html">Register</a>
+                        </div>
                     </div>
                     <form id="searchBar-form">
-                        <input id="searchBar"  type="text" name="search" placeholder="Search...">
+                        <input id="searchBar" type="text" name="search" placeholder="Search...">
                         <button id="search-btn">Search</button>
                     </form>
                     <select id="filter-list">
@@ -37,22 +49,32 @@
                 </div>
             </nav>
         </header>
-        <section class="col-lg-8" id="content">
-            <div class="container">
-                <h2>Most recent 10 movies</h2>
+        <section class="col-xs-12 col-sm-12 col-lg-8" id="content">
+            <div class="col-12 container">
+                <div id="h2-addBtn-container">
+                    <h2 id="h2-most-recent-movies">Most recent movies</h2>
+                </div>
                 <div class="most-recent-movies" id="ceva">
+                    <article>
+                        <a href="#" class="image-featured"><img src="" alt="" /></a>
+                    </article>
+                </div>
+                <div class="most-recent-movies" id="altceva" style="display: none;">
                     <article>
                         <a href="#" class="image-featured"><img src="" alt="" /></a>
                     </article>
                 </div>
             </div>
         </section>
+        <section class="pagination" id="pages" >
+            
+        </section>
         <section id="add-modal-container">
             <div id="close-container">
                 <span id="close-modal">Close X</span>
             </div>
             <form id="add-modal" class="modal-content">
-                <p id="add-modal-title">Add movie</p>
+                <p id="add-modal-title">Add new movie</p>
                 <input type="hidden" placeholder="id" title="movie-id" value="" id="movie-id">
                 <p>Title <input type="text" placeholder="Title"  title="movie-title" value="" id="movie-title"></p>
                 <p>Year <input type="number" placeholder="Year" title="year" value="" id="movie-year"></p>
@@ -65,16 +87,17 @@
                 <p>imdb Votes <input type="text" placeholder="imdb Votes" title="imdb-votes" value="" id="movie-imdb-votes"></p>
                 <p>imdb ID <input type="text" placeholder="imdb ID" title="imdb-id" value="" id="movie-imdb-id"></p>
                 <p>Type <input type="text" placeholder="Type" title="type" value="" id="movie-type"></p>
-                <input type="submit" value="save changes" id="updateChanges">
+                <input type="submit" value="add movie" id="updateChanges">
             </form>
         </section>
         <footer class="footer">
-            <div class="copyright">Copyright © 
+            <div class="copyright">©wild_turkeys_team
                 <a href="https://www.facebook.com/">
-                    <img src="http://thaifernflora.myspecies.info/sites/thaifernflora.myspecies.info/files/facebookgrey.png" class="facebook"></a>
+                    <img src="http://nataliamalova.com/bitrix/templates/books/images/facebook-xxl.png" class="facebook"></a>
                 <a href="https://twitter.com/twitter">
-                    <img src="http://www.sycall.fr/hotelparimis/assets/img/logo/twitter2.png" class="facebook"></a>
+                    <img src="http://www.jackmazzoni.com/wp-content/uploads/1418895483_social-003_twitter.png" class="twitter"></a>
             </div> 
         </footer>
+        <!-- <div id="footer"></div> -->
     </body>
 </html>

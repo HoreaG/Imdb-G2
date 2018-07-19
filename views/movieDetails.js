@@ -1,18 +1,36 @@
-
 window.onload = function(){
     
     const authToken = localStorage.getItem('loggedUser');
     console.log('Token:', authToken);
+    const user_name = localStorage.getItem('username');
     if(authToken !== null) {
         const body = document.getElementById('body');
+        const buttonContainer = document.getElementById('buttons-container');
         const displayEditBtn = document.createElement('button');
         displayEditBtn.setAttribute('id', 'edit-btn');
-        displayEditBtn.innerHTML = 'Edit movie details';
-        body.appendChild(displayEditBtn);
+        displayEditBtn.innerHTML = 'Edit';
+        buttonContainer.appendChild(displayEditBtn);
         const displayDeleteBtn = document.createElement('button');
         displayDeleteBtn.setAttribute('id', 'delete-btn');
-        displayDeleteBtn.innerHTML = 'Delete movie';
-        body.appendChild(displayDeleteBtn);
+        displayDeleteBtn.innerHTML = 'Delete';
+        buttonContainer.appendChild(displayDeleteBtn);
+        const logRegContainer = document.getElementById('log-reg');
+        const loginDisplay = document.getElementById('login-anch');
+        const registerDisplay = document.getElementById('register-anch');
+        const userName = document.createElement('p');
+        userName.setAttribute('id', 'user-name');
+        userName.innerHTML = 'Hello, ' + user_name;
+        loginDisplay.style.display = 'none';
+        registerDisplay.style.display = 'none';
+        logRegContainer.appendChild(userName);
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('href', 'home.html')
+        logOutBtn.setAttribute('id', 'logout-btn');
+        logOutBtn.innerHTML = 'Logout';
+        userName.parentNode.insertBefore(logOutBtn, userName.nextSibling);
+        logOutBtn.addEventListener('click', function(){
+            localStorage.removeItem('loggedUser');
+        });
     }
     
     const current_id = getUrlParameter('postId');
@@ -38,9 +56,29 @@ window.onload = function(){
     const movieType = document.getElementById('movie-type');
 
     current_movie.MovieFetchData(current_id).then(()=>{
-        const title = document.getElementById('movie_title');
+        const poster = document.getElementById('movie-poster-container');
+        poster.style.backgroundImage = `url("${current_movie.Poster}")`;
+        poster.style.backgroundSize = "100% 100%";
+        const title = document.getElementById('movie-title-detPage');
         title.innerHTML = current_movie.Title;
-        console.log(current_movie.imdbID);
+        const year = document.getElementById('year-span');
+        year.innerHTML = current_movie.Year;
+        const runtime = document.getElementById('runtime-span');
+        runtime.innerHTML = current_movie.Runtime;
+        const genre = document.getElementById('genre-span');
+        genre.innerHTML = current_movie.Genre;
+        const language = document.getElementById('language-span');
+        language.innerHTML = current_movie.Language;
+        const country = document.getElementById('country-span');
+        country.innerHTML = current_movie.Country;
+        const imdb_rating = document.getElementById('imdbRating-span');
+        imdb_rating.innerHTML = current_movie.imdbRating;
+        const imdb_votes = document.getElementById('imdbVotes-span');
+        imdb_votes.innerHTML = current_movie.imdbVotes;
+        const imdb_id = document.getElementById('imdbId-span');
+        imdb_id.innerHTML = current_movie.imdbID;
+        const type = document.getElementById('type-span');
+        type.innerHTML = current_movie.Type;
     }).then(function(){
    
    
@@ -104,7 +142,7 @@ window.onload = function(){
  });
 
  delBtn.addEventListener('click',()=>{
-    current_movie.deleteMovie(current_id,authToken);
+    current_movie.deleteMovie(current_id, authToken);
  });
 }
                 
