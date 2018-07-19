@@ -42,14 +42,7 @@ nav a:nth-child(3) {
     float:left;
     display: inline-block;
     width: 20%;
-<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.8);
-=======
-    background-color: rgba(0, 0, 0, 1);
-}
-#homeLogo:active {
-    background-color:orange;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 }
 .home {
     height: 108px;
@@ -208,38 +201,20 @@ form {
 }
 @media(max-width: 576px) {
     body #header {
-<<<<<<< HEAD
         margin-bottom: 200px;
-=======
-        margin-bottom: 235px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #body #homeLogo {
         width:100%;
     }
-<<<<<<< HEAD
-=======
-    #body #log-reg #user-name {
-        font-size: 1.56em;
-        padding-top:5px;
-    }
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     #body nav #navAndSearch {
         width:100%;
         height:146px;
     }
     body#body #log-reg {
-<<<<<<< HEAD
         top:300px;
     }
     body#body #searchBar-form {
         top: 335px;
-=======
-        top:310px;
-    }
-    body#body #searchBar-form {
-        top: 355px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
         left:0;
         width:100%;
     }
@@ -255,11 +230,7 @@ form {
     }
     #body #filter-list {
         width:100%;
-<<<<<<< HEAD
         top:401px;
-=======
-        top:421px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #body #searchBar-form #search-btn {
         position:absolute;
@@ -279,17 +250,12 @@ form {
         height: 146px;
         background-color:black;
     }
-<<<<<<< HEAD
     nav #homeLogo:active {
         background-color: white;
     }
     nav #inlineNav {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGSaNgV5NYObLopELCc-RNTIYCQtshxCaCJd3OaO36BGtgw35');
     background-size: 209px;
-=======
-    nav #inlineNav {
-    background-size: 190px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     background-position: 50%;
     }
     #body nav a.home {
@@ -308,11 +274,7 @@ form {
         position:relative;
         width:100%;
         text-align: center;
-<<<<<<< HEAD
         padding: 1em 3.45em 0.4em 3.45em;
-=======
-        padding: 1em 0em 0.4em 0em;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #navAndSearch a:nth-child(1):active {
         background-color: black;
@@ -329,21 +291,13 @@ form {
         position:relative;
         width:100%;
         text-align: center;
-<<<<<<< HEAD
         padding: 0.4em 1.4em 0.4em 1.4em;
-=======
-        padding: 0.4em 0em 0.4em 0em;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #navAndSearch a:nth-child(3) {
         top:-20px;
         width:100%;
         text-align: center;
-<<<<<<< HEAD
         padding: 0.3em 2.15em 1.05em 2.15em;
-=======
-        padding: 0.3em 0em 1.05em 0em;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #add-btn {
         padding: 0.4em 1.5em 0.2em 1.5em;
