@@ -1,6 +1,10 @@
 footer {
     height: 30px;
+<<<<<<< HEAD
     margin-top: 3em;
+=======
+    margin-top: 2em;
+>>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     display: flex;
     justify-content: center;
     align-content: center;
@@ -34,16 +38,25 @@ footer {
     border-radius:20px;
     padding:1px;
 }
+<<<<<<< HEAD
 .twitter:hover{
-    border-radius:20px;
-    background-color: white;
-    padding: 3.1px;
-}
+=======
 .facebook:hover{
+>>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     border-radius:20px;
     background-color: white;
     padding: 3.1px;
 }
+<<<<<<< HEAD
+.facebook:hover{
+=======
+.twitter:hover{
+>>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
+    border-radius:20px;
+    background-color: white;
+    padding: 3.1px;
+}
+<<<<<<< HEAD
 #h2-addBtn-container {
     display:flex;
 }
@@ -54,6 +67,69 @@ footer {
     
 }
 @media(min-width:768px) {
+=======
+.facebook:active {
+    background-color:orange;
+}
+.twitter:active {
+    background-color:orange;
+}
+@media(max-width:576px) {
+    .footer {
+        height: 40px;
+        background-size: 335px;
+        font-size: 1.05em;
+    }
+    .copyright {
+        width:100%;
+    }
+    .footer .facebook {
+        width: 20px;
+        height: 20px;
+    }
+    .footer .twitter {
+        width: 20px;
+        height: 20px;
+    }
+    .footer .twitter:hover{
+        padding: 3.1px;
+    }
+    .footer .facebook:hover{
+        padding: 3.1px;
+    }
+}
+@media(max-width:768px) {
+    footer {
+        height: 35px;
+        background-size: 271px;
+        background-position:bottom;
+        font-size: 1.2em;
+    }
+    .copyright {
+        height:35px
+    }
+    .facebook {
+        width: 30px;
+        height: 30px;
+       
+    }
+    .twitter {
+        width: 30px;
+        height: 30px;
+    }
+    .twitter:hover{
+        border-radius:20px;
+        background-color: white;
+        padding: 5px;
+    }
+    .facebook:hover{
+        border-radius:20px;
+        background-color: white;
+        padding: 5px;
+    }
+}
+@media(max-width: 992px) {
+>>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     
 }
 @media(min-width:992px) {
