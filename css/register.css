@@ -1,13 +1,26 @@
 #movieForm{
 	width: 60%; 
 	margin: 25px auto;
+  border:solid 2px black;
+  padding:30px;
+  border-radius: 40px;
+  background-color:black;
 }
 h3, p{
 	text-align: center;
 	color:black;
+  font-weight: bold;
+  font-size: 1em;
+  color:white;
+}
+
+h3{
+  font-size: 2em;
+  color:white;
 }
 
 #missUser, #shortPass, #existUser, #missPass, #noMatchPass, .problems{
+  color:white;
 	display:none;
 }
 
@@ -27,10 +40,11 @@ body {
 .container{
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%);
+
 }
 
 .footer{ 
