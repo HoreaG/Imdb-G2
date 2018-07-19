@@ -15,9 +15,7 @@ nav {
     width:100%;
     overflow: hidden;
 }
-#homeLogo {
-    background-image:url('https://www.48hourslogo.com/48hourslogo_data/2014/07/12/2014071219204316517.png');
-}  
+  
 nav a {
     float: left;
     display: block;
@@ -38,7 +36,7 @@ nav a:hover {
     color: black;
 } 
 nav a.home {
-    background-color: white;
+    background-color: orange;
     color: white;
     text-shadow: 1px 1px black;
     font-variant: small-caps;
