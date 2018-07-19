@@ -20,12 +20,6 @@ nav a:nth-child(1) {
 nav a:nth-child(2) {
     padding: 2.2em 0.74em 2.2em 0.8em;
 }
-nav a:nth-child(3) {
-    padding: 1.4em 0.8em 0.2em 0.8em;
-}
-nav a:nth-child(3) {
-    padding: 1.4em 0.8em 0.2em 0.8em;
-}
 #add-btn:hover {
     color:white;
     background-color: rgba(0, 0, 0, 0.5);
@@ -36,6 +30,14 @@ nav a:hover {
     background-color: #ddd;
     color: black;
 } 
+nav a:nth-child(1):active {
+    background-color: black;
+    color:white;
+}
+nav a:nth-child(2):active {
+    background-color: black;
+    color:white;
+}
 nav a.home {
     background-image: url('../pics/logobundetot.png');
     background-size: 167px;
@@ -48,7 +50,10 @@ nav a.home {
 }
 nav a.home:hover {
     color: black;
-    background-color: rgba (255,165,0, 0.9);
+    background-color: rgba(255,165,0, 0.2);
+}
+nav a.home:active {
+    background-color: orange;
 }
 nav a {
     color: orange;
@@ -74,7 +79,7 @@ nav a:hover {
     float:left;
     display: inline-block;
     width: 20%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
 }
 .home {
     height: 108px;
@@ -103,6 +108,14 @@ nav a:hover {
     z-index: 1;
 }
 #log-reg {
+    
+    height: 30px;
+    position:absolute;
+    top:169px;
+    top:0;
+    right:0;
+    
+    
     float: right;
     width: auto;
     display:flex;
@@ -158,9 +171,119 @@ nav a:hover {
 }
 
 @media(max-width:576px) {
-    
+    body nav {
+        margin-bottom: 80px;
+    }
+    body #homeLogo {
+        width:100%;
+    }
+    body #navAndSearch {
+        width:100% 
+    }
+    body #log-reg {
+        top:315px;
+    }
+    body #user-name {
+        font-size: 1.56em;
+    }
 }
 @media(max-width:768px) {
+    nav {
+        margin-bottom: 80px;
+    }
+    #homeLogo {
+        width:50%;
+        height: 146px;
+        background-color:black;
+    }
+    #body nav a.home {
+        background-size: 220px;
+        background-position: center;
+        height:146px;
+    }
+    #navAndSearch {
+        width:50% 
+    }
+    #inlineNav {
+        height:118px;
+        background-position:top;
+    }
+    #nav-backgroud-div {
+        background-position:bottom;
+    }
+    nav a:nth-child(1) {
+        width:100%;
+        text-align: center;
+        padding: 1.9em 0em 0.7em 0em;
+        overflow:visible;
+}
+    nav a:nth-child(2) {
+        width:100%;
+        text-align: center;
+        padding: 0.5em 0em 1.9em 0em;
+        overflow:visible;;
+    }
+    #log-reg {
+        width:100%;
+        height: 30px;
+        position:absolute;
+        display: flex;
+        align-items: center;
+        top:169px;
+        left:0;
+    }
+    #login-anch {
+        width:50%;
+        height:100%;
+        text-align: center;
+        padding-top: 3px;
+        font-size: 1.8em;
+        margin:0;
+    }
+    #login-anch:active {
+        background-color:white;
+        color:dodgerblue;
+    }
+    #register-anch {
+        width:50%;
+        height:100%;
+        text-align: center;
+        padding-top: 3px;
+        padding-left:0;
+        padding-right: 0;
+        font-size: 1.8em;
+        margin:0;
+    }
+    #register-anch:active {
+        background-color:white;
+        color:orangered;
+    }
+    #user-name {
+        width:50%;
+        height:100%;
+        text-align: center;
+        padding-top: 3px;
+        font-size: 1.8em;
+        margin:0;
+    }
+    #logout-btn {
+        width:50%;
+        height:100%;
+        text-align: center;
+        padding-top: 3px;
+        padding-left:0;
+        padding-right:0;
+        font-size: 1.8em;
+        margin:0;
+    }
+    #logout-btn:hover {
+        color: white;
+        background-color:black;
+    }
+    #logout-btn:active {
+        background-color:white;
+        color:black;
+    }
     
 }
 @media(max-width: 992px) {

@@ -59,30 +59,30 @@ footer {
     .copyright {
         width:100%;
     }
-    .facebook {
+    .footer .facebook {
         width: 20px;
         height: 20px;
     }
-    .twitter {
+    .footer .twitter {
         width: 20px;
         height: 20px;
     }
-    .twitter:hover{
+    .footer .twitter:hover{
         padding: 3.1px;
     }
-    .facebook:hover{
+    .footer .facebook:hover{
         padding: 3.1px;
     }
 }
 @media(max-width:768px) {
     footer {
-        height: 40px;
-        background-size: 320px;
+        height: 35px;
+        background-size: 271px;
         background-position:bottom;
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
     .copyright {
-        height:40px
+        height:35px
     }
     .facebook {
         width: 30px;
