@@ -42,7 +42,10 @@ nav a:nth-child(3) {
     float:left;
     display: inline-block;
     width: 20%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
+}
+#homeLogo:active {
+    background-color:orange;
 }
 .home {
     height: 108px;
@@ -201,20 +204,24 @@ form {
 }
 @media(max-width: 576px) {
     body #header {
-        margin-bottom: 200px;
+        margin-bottom: 235px;
     }
     #body #homeLogo {
         width:100%;
+    }
+    #body #log-reg #user-name {
+        font-size: 1.56em;
+        padding-top:5px;
     }
     #body nav #navAndSearch {
         width:100%;
         height:146px;
     }
     body#body #log-reg {
-        top:300px;
+        top:310px;
     }
     body#body #searchBar-form {
-        top: 335px;
+        top: 355px;
         left:0;
         width:100%;
     }
@@ -230,7 +237,7 @@ form {
     }
     #body #filter-list {
         width:100%;
-        top:401px;
+        top:421px;
     }
     #body #searchBar-form #search-btn {
         position:absolute;
@@ -250,12 +257,9 @@ form {
         height: 146px;
         background-color:black;
     }
-    nav #homeLogo:active {
-        background-color: white;
-    }
     nav #inlineNav {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGSaNgV5NYObLopELCc-RNTIYCQtshxCaCJd3OaO36BGtgw35');
-    background-size: 209px;
+    background-size: 200px;
     background-position: 50%;
     }
     #body nav a.home {

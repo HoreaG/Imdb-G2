@@ -132,16 +132,28 @@ body {
 }
 
 @media(max-width:576px) {
+    body#body {
+        background-size: 100%;
+        background-position: center;
+    }
     #body #h2-most-recent-movies {
-        border-bottom:0;
+        border-bottom:0 !important;
+        height:50px;
+        padding-top: 4px;
     }
     body#body .movie-element {
         width: 50%;
     }
 }
 @media(max-width:768px) {
+    #body {
+        background-size: 50%;
+        background-position: center;
+    }
     #body #h2-most-recent-movies {
-        border-bottom:40px !important;
+        margin-bottom:0;
+        height: 50px;
+        padding-top: 6px;
     }
     #body .movie-element {
         width: 33.333%;
