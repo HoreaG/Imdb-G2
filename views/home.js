@@ -95,50 +95,27 @@
     function searchMovies (filterList, input){
         searchList.fetchMovieList(filterList, input).then((item)=>{
             console.log('RES', item.results);
+            const globalContainer = document.getElementById('ceva');
+            const childToRemove = globalContainer.lastElementChild
+            globalContainer.removeChild(childToRemove );
+            const moviesGlobalContainer = document.createElement('article');
+            moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+            globalContainer.appendChild(moviesGlobalContainer);
         for( let i = 0; i < item.results.length; i++){
             console.log("Result of search: ",item.results[i]);
-         }
-       });
-    }
-    
-
-    const movieList = new MovieList();
-    let skip = 0;
-    let current_page = 1;
-    const pages = document.getElementById('pages');
-      const prev_btn = document.createElement('a');
-      const next_btn = document.createElement('a');
-      
-      console.log(movieList.next);
-      prev_btn.classList.add('page');
-      next_btn.classList.add('page');
-      prev_btn.innerHTML = "prev";
-      next_btn.innerHTML = "next";
-      pages.appendChild(prev_btn);
-      pages.appendChild(next_btn);
-   
-    movieList.fetchDataList(skip).then(()=>{
-      const globalContainer = document.getElementById('ceva');
-      const moviesGlobalContainer = document.createElement('article');
-      moviesGlobalContainer.setAttribute('class', 'movies-global-container');
-      moviesGlobalContainer.setAttribute('id','movies-global-container');
-      globalContainer.appendChild(moviesGlobalContainer);
-     
-      for( let i = 0; i < movieList.items.length; i++){
-          console.log(movieList.items[i].Title);
-          const movieElement = document.createElement('div');
+            const movieElement = document.createElement('div');
           const ancor_element = document.createElement('a');
-          ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
+          ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+item.results[i]._id);
           movieElement.setAttribute('class', 'movie-element');
           moviesGlobalContainer.appendChild(movieElement);
           const posterContainer = document.createElement('div');
           posterContainer.setAttribute('class', 'poster-container');
-          movieElement.appendChild(posterContainer);
+          ancor_element.appendChild(posterContainer);
           //posterContainer.style.height = "500px";
-          posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+          posterContainer.style.backgroundImage = `url("${item.results[i].Poster}")`;
           posterContainer.style.backgroundSize = "100% 100%";
           const imdbRating = document.createElement('p');
-          imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+          imdbRating.innerHTML = "Rating &nbsp;" + item.results[i].imdbRating;
           imdbRating.setAttribute('class', 'imdb-rating');
           posterContainer.appendChild(imdbRating);
 //          const moviePoster = document.createElement('img');
@@ -148,129 +125,161 @@
           const movieTitle  = document.createElement('p');
           movieTitle.setAttribute('class', 'movie-title');
           ancor_element.appendChild(movieTitle);
-          movieTitle.innerHTML = movieList.items[i].Title;
+          movieTitle.innerHTML = item.results[i].Title;
           movieElement.appendChild(ancor_element);
-      }
-      
+        }
+       });
+    }
+    
+
+    const movieList = new MovieList();
+    let skip = 0;
+    const pages = document.getElementById('pages');
+    const prev_btn = document.createElement('a');
+    const next_btn = document.createElement('a');
+    
+    console.log(movieList.next);
+    prev_btn.classList.add('page');
+    next_btn.classList.add('page');
+    prev_btn.innerHTML = "Prev";
+    next_btn.innerHTML = "Next";
+    pages.appendChild(prev_btn);
+    pages.appendChild(next_btn);
+    movieList.fetchDataList(skip).then(()=>{
+    const globalContainer = document.getElementById('ceva');
+    const moviesGlobalContainer = document.createElement('article');
+    moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+    moviesGlobalContainer.setAttribute('id','movies-global-container');
+    globalContainer.appendChild(moviesGlobalContainer);
+    
+    for( let i = 0; i < movieList.items.length; i++){
+        console.log(movieList.items[i].Title);
+        const movieElement = document.createElement('div');
+        const ancor_element = document.createElement('a');
+        ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
+        movieElement.setAttribute('class', 'movie-element');
+        moviesGlobalContainer.appendChild(movieElement);
+        const posterContainer = document.createElement('div');
+        posterContainer.setAttribute('class', 'poster-container');
+        movieElement.appendChild(posterContainer);
+        //posterContainer.style.height = "500px";
+        posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+        posterContainer.style.backgroundSize = "100% 100%";
+        const imdbRating = document.createElement('p');
+        imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+        imdbRating.setAttribute('class', 'imdb-rating');
+        posterContainer.appendChild(imdbRating);
+        const movieTitle  = document.createElement('p');
+        movieTitle.setAttribute('class', 'movie-title');
+        ancor_element.appendChild(movieTitle);
+        movieTitle.innerHTML = movieList.items[i].Title;
+        movieElement.appendChild(ancor_element);
+      }   
      
-  }).catch(()=>{
+    }).catch(()=>{
       console.log('Eroare afisare');
 
-  });
+});
 // paginare
 
+
 prev_btn.addEventListener('click',()=>{
-    const global_container = document.getElementById('ceva');
-    const movies_items = document.getElementById('movies-global-container');
-    global_container.removeChild(movies_items);
+    const numberOfPage = movieList.nrPages;
+    let current_page = movieList.currentPage;
+    current_page -= 1;
+    console.log(numberOfPage);
+    console.log(current_page);
     
-    
-    
-
-    // movieList.fetchDataList(skip).then(()=>{
-    //     const globalContainer = document.getElementById('ceva');
-    //     const moviesGlobalContainer = document.createElement('article');
-    //     moviesGlobalContainer.setAttribute('class', 'movies-global-container');
-    //     moviesGlobalContainer.setAttribute('id','movies-global-container');
-    //     globalContainer.appendChild(moviesGlobalContainer);
-
-    //     const movieListparts = movieList.items.slice(start,end);
-    //     console.log(movieListparts);
-    //     if(movieListparts.length === 0){
-    //         start = start - 10;
-    //         end = end - 10;
-    //         movieList.items.slice(start,end);
-
-    //     }
-    //     for( let i = 0; i < movieListparts.length; i++){
-            
-    //         const movieElement = document.createElement('div');
-    //         const ancor_element = document.createElement('a');
-    //         ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieListparts[i]._id);
-    //         movieElement.setAttribute('class', 'movie-element');
-    //         moviesGlobalContainer.appendChild(movieElement);
-    //         const posterContainer = document.createElement('div');
-    //         posterContainer.setAttribute('class', 'poster-container');
-    //         movieElement.appendChild(posterContainer);
-    //         //posterContainer.style.height = "500px";
-    //         posterContainer.style.backgroundImage = `url("${movieListparts[i].Poster}")`;
-    //         posterContainer.style.backgroundSize = "100% 100%";
-    //         const imdbRating = document.createElement('p');
-    //         imdbRating.innerHTML = "Rating &nbsp;" + movieListparts[i].imdbRating;
-    //         imdbRating.setAttribute('class', 'imdb-rating');
-    //         posterContainer.appendChild(imdbRating);
-    //         const movieTitle  = document.createElement('p');
-    //         movieTitle.setAttribute('class', 'movie-title');
-    //         ancor_element.appendChild(movieTitle);
-    //         movieTitle.innerHTML = movieListparts[i].Title;
-    //         movieElement.appendChild(ancor_element);
-    //     }
-        
-       
-    // }).catch(()=>{
-    //     console.log('Eroare afisare');
-  
-    // });
-});
-
-
-  next_btn.addEventListener('click',()=>{
-    const nrOfPages = movieList.nrPages;
-    console.log(nrOfPages);
-    let start = current_page * 10;
-    
-    current_page += 1;
     skip = (current_page - 1) * 10;
-    let end = current_page * 10
+    
 
-    if (current_page > nrOfPages){
-        current_page = 1;
-        start = 0;
-        end = 10;
-        skip = 0;
+
+    if (current_page < 1){
+       
+       current_page  = numberOfPage;
+       skip = (current_page - 1) * 10;
+       start = (current_page - 1) * 10;
+       end = current_page;
     }
-    const global_container = document.getElementById('ceva');
-    const movies_items = document.getElementById('movies-global-container');
-    
-    global_container.removeChild(movies_items);
-   
-    const page =  movieList.page;
-    console.log(page);
-    
-    movieList.fetchDataList(skip).then(()=>{
+        global_container = document.getElementById('ceva');
+        movies_items = document.getElementById('movies-global-container');
+        global_container.removeChild(movies_items);
+        movieList.fetchDataList(skip).then(()=>{
         const globalContainer = document.getElementById('ceva');
         const moviesGlobalContainer = document.createElement('article');
         moviesGlobalContainer.setAttribute('class', 'movies-global-container');
         moviesGlobalContainer.setAttribute('id','movies-global-container');
         globalContainer.appendChild(moviesGlobalContainer);
-
-        const movieListparts = movieList.items.slice(start,end);
-        console.log(movieListparts);
         
-        for( let i = 0; i < movieListparts.length; i++){
+        for( let i = 0; i < movieList.items.length; i++){
             
             const movieElement = document.createElement('div');
             const ancor_element = document.createElement('a');
-            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieListparts[i]._id);
+            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
+            movieElement.setAttribute('class', 'movie-element');
+            moviesGlobalContainer.appendChild(movieElement);
+            const posterContainer = document.createElement('div');
+            posterContainer.setAttribute('class', 'poster-container');
+            movieElement.appendChild(posterContainer);
+            posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
+            posterContainer.style.backgroundSize = "100% 100%";
+            const imdbRating = document.createElement('p');
+            imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
+            imdbRating.setAttribute('class', 'imdb-rating');
+            posterContainer.appendChild(imdbRating);
+            const movieTitle  = document.createElement('p');
+            movieTitle.setAttribute('class', 'movie-title');
+            ancor_element.appendChild(movieTitle);
+            movieTitle.innerHTML = movieList.items[i].Title;
+            movieElement.appendChild(ancor_element);
+        }
+    }).catch(()=>{
+        console.log('Eroare afisare');
+    });
+});
+
+
+    next_btn.addEventListener('click',()=>{
+    let current_page = movieList.currentPage;
+    const nrOfPages = movieList.nrPages;
+    console.log(nrOfPages);
+    skip = current_page * 10;
+    current_page += 1;
+    if (current_page > nrOfPages){
+       current_page = 1;
+       skip = 0;
+    } 
+        const global_container = document.getElementById('ceva');
+        const movies_items = document.getElementById('movies-global-container');
+        global_container.removeChild(movies_items);
+        movieList.fetchDataList(skip).then(()=>{
+        const globalContainer = document.getElementById('ceva');
+        const moviesGlobalContainer = document.createElement('article');
+        moviesGlobalContainer.setAttribute('class', 'movies-global-container');
+        moviesGlobalContainer.setAttribute('id','movies-global-container');
+        globalContainer.appendChild(moviesGlobalContainer);
+        for( let i = 0; i < movieList.items.length; i++){
+            const movieElement = document.createElement('div');
+            const ancor_element = document.createElement('a');
+            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+movieList.items[i]._id);
             movieElement.setAttribute('class', 'movie-element');
             moviesGlobalContainer.appendChild(movieElement);
             const posterContainer = document.createElement('div');
             posterContainer.setAttribute('class', 'poster-container');
             movieElement.appendChild(posterContainer);
             //posterContainer.style.height = "500px";
-            posterContainer.style.backgroundImage = `url("${movieListparts[i].Poster}")`;
+            posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
             posterContainer.style.backgroundSize = "100% 100%";
             const imdbRating = document.createElement('p');
-            imdbRating.innerHTML = "Rating &nbsp;" + movieListparts[i].imdbRating;
+            imdbRating.innerHTML = "Rating &nbsp;" + movieList.items[i].imdbRating;
             imdbRating.setAttribute('class', 'imdb-rating');
             posterContainer.appendChild(imdbRating);
             const movieTitle  = document.createElement('p');
             movieTitle.setAttribute('class', 'movie-title');
             ancor_element.appendChild(movieTitle);
-            movieTitle.innerHTML = movieListparts[i].Title;
+            movieTitle.innerHTML = movieList.items[i].Title;
             movieElement.appendChild(ancor_element);
         }
-        
        
     }).catch(()=>{
         console.log('Eroare afisare');
@@ -282,4 +291,3 @@ prev_btn.addEventListener('click',()=>{
   
 });
      
-

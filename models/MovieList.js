@@ -11,6 +11,7 @@ class MovieList {
         return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/?take=10&skip='+s,{
             method : 'GET',
             success : (movieData)=>{
+                this.items = [];
                 console.log(movieData.pagination);
                 this.currentPage = movieData.pagination.currentPage;
                 this.nrPages = movieData.pagination.numberOfPages;
