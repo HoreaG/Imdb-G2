@@ -75,8 +75,12 @@
                 imdbID: add_imdb_id.value,
                 Type: add_type.value
             }
-           e.preventDefault();
+            e.preventDefault();
             new_movie.addMovie(addObj,authToken);
+//            TO DO:
+//            display=none 
+//            fa remove la continut
+//            fa din nou get si adauga continutul
         });
 
         
@@ -118,10 +122,6 @@
           imdbRating.innerHTML = "Rating &nbsp;" + item.results[i].imdbRating;
           imdbRating.setAttribute('class', 'imdb-rating');
           posterContainer.appendChild(imdbRating);
-//          const moviePoster = document.createElement('img');
-//          moviePoster.setAttribute('src',  movieList.items[i].Poster);
-//          moviePoster.setAttribute('class', 'movie-poster');
-//          posterContainer.appendChild(moviePoster);
           const movieTitle  = document.createElement('p');
           movieTitle.setAttribute('class', 'movie-title');
           ancor_element.appendChild(movieTitle);
@@ -162,7 +162,6 @@
         const posterContainer = document.createElement('div');
         posterContainer.setAttribute('class', 'poster-container');
         movieElement.appendChild(posterContainer);
-        //posterContainer.style.height = "500px";
         posterContainer.style.backgroundImage = `url("${movieList.items[i].Poster}")`;
         posterContainer.style.backgroundSize = "100% 100%";
         const imdbRating = document.createElement('p');
