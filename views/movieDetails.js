@@ -85,6 +85,7 @@ window.onload = function(){
     document.getElementById("delete-btn").addEventListener("click", current_movie.deleteMovie, false);
 
         editBtn.addEventListener('click', function(e) {
+            current_movie.MovieFetchData(current_id).then(()=>{
             modalContainer.style.display = "block";
             hiddenMovieId.value = current_id;
             movieTitle.value = current_movie.Title;
@@ -97,8 +98,9 @@ window.onload = function(){
             movieImdbRating.value  = current_movie.imdbRating;
             movieImdbVotes.value = current_movie.imdbVotes;
             movieImdbId.value = current_movie.imdbID;
-            console.log(current_movie);
+            console.log("current_movie:", current_movie);
             movieType.value = current_movie.Type;
+            });
         })
     }).then(()=>{
         closeModal.addEventListener('click', function(){
@@ -133,10 +135,37 @@ window.onload = function(){
             imdbID: updateImdbId,
             Type: updateType
         }
-        console.log(updateData);
+        console.log("Update data", updateData);
         modalContainer.style.display = "none";
         
         current_movie.MovieUpdate(updateId, updateData, authToken);
+        
+        console.log(updateData.Year);
+        const updatedPoster = document.getElementById('movie-poster-container');
+        updatedPoster.style.backgroundImage = `url("${updateData.Poster}")`;
+        const updatedTitle = document.getElementById('movie-title-detPage');
+        updatedTitle.innerHTML = updateData.Title;
+        const updatedYear = document.getElementById('year-span');
+        updatedYear.innerHTML = updateData.Year;
+        const updatedRuntime = document.getElementById('runtime-span');
+        updatedRuntime.innerHTML = updateData.Runtime;
+        const updatedGenre = document.getElementById('genre-span');
+        updatedGenre.innerHTML = updateData.Genre;
+        const updatedLanguage = document.getElementById('language-span');
+        updatedLanguage.innerHTML = updateData.Language;
+        const updatedCountry = document.getElementById('country-span');
+        updatedCountry.innerHTML = updateData.Country;
+        const updatedImdb_rating = document.getElementById('imdbRating-span');
+        updatedImdb_rating.innerHTML = updateData.imdbRating;
+        const updatedImdb_votes = document.getElementById('imdbVotes-span');
+        updatedImdb_votes.innerHTML = updateData.imdbVotes;
+        const updatedImdb_id = document.getElementById('imdbId-span');
+        updatedImdb_id.innerHTML = updateData.imdbID;
+        const updatedType = document.getElementById('type-span');
+        updatedType.innerHTML = updateData.Type;
+
+        
+        console.log(updateData);
         
     });
  });

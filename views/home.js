@@ -6,7 +6,7 @@
     //const add_btn = document.getElementById("add-btn");
     const modal_container = document.getElementById('add-modal-container');
     const close_modal_add = document.getElementById('close-container');
-    
+    const save_new_movie = document.getElementById('updateChanges');
     const authToken = localStorage.getItem('loggedUser');
     const user_name = localStorage.getItem('username');
     console.log('AuthToken:', authToken);
@@ -44,6 +44,7 @@
         close_modal_add.addEventListener('click',()=>{
             modal_container.style.display = "none";
         })
+        
         const new_movie =  new Movie();
 
         const add_title = document.getElementById('movie-title');
@@ -61,6 +62,7 @@
 
         
         add_to_database.addEventListener('click',(e)=>{
+             e.preventDefault();
             console.log('click');
             const addObj = {
                 Title: add_title.value,
@@ -75,12 +77,15 @@
                 imdbID: add_imdb_id.value,
                 Type: add_type.value
             }
-            e.preventDefault();
+           
+            modal_container.style.display = "none";
+            
             new_movie.addMovie(addObj,authToken);
-//            TO DO:
-//            display=none 
-//            fa remove la continut
-//            fa din nou get si adauga continutul
+            global_container = document.getElementById('ceva');
+            movies_items = document.getElementById('movies-global-container');
+            global_container.removeChild(movies_items);   
+            
+
         });
 
         
