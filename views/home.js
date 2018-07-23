@@ -77,30 +77,16 @@
                 imdbID: add_imdb_id.value,
                 Type: add_type.value
             }
-            
-            e.preventDefault();
-            new_movie.addMovie(addObj,authToken);
-//            TO DO:
-//            display=none 
-//            fa remove la continut
-//            fa din nou get si adauga continutul
            
             modal_container.style.display = "none";
             
             new_movie.addMovie(addObj,authToken).then(()=>{
                 location.reload();
             })
-            
-            
-            
-        
-            
+    
         });
-
-        
-
     });
-        }
+    }
     searchBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const input = document.getElementById('searchBar').value;
