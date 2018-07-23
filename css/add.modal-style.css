@@ -80,15 +80,6 @@
     color:orangered;
     cursor: pointer;
 }
-<<<<<<< HEAD
-@media(max-width: 576px) {
-    
-}
-@media(min-width:576px) {
-    
-}
-@media(min-width:768px) {
-=======
 @media(max-width:576px) {
     
 }
@@ -96,7 +87,6 @@
     
 }
 @media(max-width: 992px) {
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     
 }
 @media(min-width:992px) {

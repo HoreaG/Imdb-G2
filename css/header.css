@@ -20,15 +20,6 @@ nav a:nth-child(1) {
 nav a:nth-child(2) {
     padding: 2.2em 0.74em 2.2em 0.8em;
 }
-<<<<<<< HEAD
-nav a:nth-child(3) {
-    padding: 1.4em 0.8em 0.2em 0.8em;
-}
-nav a:nth-child(3) {
-    padding: 1.4em 0.8em 0.2em 0.8em;
-}
-=======
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 #add-btn:hover {
     color:white;
     background-color: rgba(0, 0, 0, 0.5);
@@ -39,8 +30,6 @@ nav a:hover {
     background-color: #ddd;
     color: black;
 } 
-<<<<<<< HEAD
-=======
 nav a:nth-child(1):active {
     background-color: black;
     color:white;
@@ -49,7 +38,6 @@ nav a:nth-child(2):active {
     background-color: black;
     color:white;
 }
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 nav a.home {
     background-image: url('../pics/logobundetot.png');
     background-size: 167px;
@@ -62,14 +50,10 @@ nav a.home {
 }
 nav a.home:hover {
     color: black;
-<<<<<<< HEAD
-    background-color: rgba (255,165,0, 0.9);
-=======
     background-color: rgba(255,165,0, 0.2);
 }
 nav a.home:active {
     background-color: orange;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 }
 nav a {
     color: orange;
@@ -95,11 +79,7 @@ nav a:hover {
     float:left;
     display: inline-block;
     width: 20%;
-<<<<<<< HEAD
-    background-color: rgba(0, 0, 0, 0.7);
-=======
     background-color: rgba(0, 0, 0, 1);
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 }
 .home {
     height: 108px;
@@ -128,8 +108,6 @@ nav a:hover {
     z-index: 1;
 }
 #log-reg {
-<<<<<<< HEAD
-=======
     
     height: 30px;
     position:absolute;
@@ -138,7 +116,6 @@ nav a:hover {
     right:0;
     
     
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     float: right;
     width: auto;
     display:flex;
@@ -191,8 +168,6 @@ nav a:hover {
 #logout-btn:hover {
     color: black;
     background-color: white;
-<<<<<<< HEAD
-=======
 }
 
 @media(max-width:576px) {
@@ -316,5 +291,4 @@ nav a:hover {
 }
 @media(min-width:992px) {
     
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
 }

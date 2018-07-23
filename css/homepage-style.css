@@ -132,10 +132,6 @@ body {
 }
 
 @media(max-width:576px) {
-<<<<<<< HEAD
-    #body #h2-most-recent-movies {
-        border-bottom:0;
-=======
     body#body {
         background-size: 100%;
         background-position: center;
@@ -144,17 +140,12 @@ body {
         border-bottom:0 !important;
         height:50px;
         padding-top: 4px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     body#body .movie-element {
         width: 50%;
     }
 }
 @media(max-width:768px) {
-<<<<<<< HEAD
-    #body #h2-most-recent-movies {
-        border-bottom:40px !important;
-=======
     #body {
         background-size: 50%;
         background-position: center;
@@ -163,7 +154,6 @@ body {
         margin-bottom:0;
         height: 50px;
         padding-top: 6px;
->>>>>>> 5680238d00004474ef16693d67f4ce7b71daed78
     }
     #body .movie-element {
         width: 33.333%;
