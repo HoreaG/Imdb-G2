@@ -55,6 +55,13 @@ class MovieList {
             }
         });
     }
-   
+   getMovieList(){
+       return $.ajax('https://ancient-caverns-16784.herokuapp.com/movies/?take=10&skip=10',{
+           method: 'GET',
+           success: (freshMovieList)=>{
+               console.log('freshMovieList:', freshMovieList.results);
+           }
+       })
+   }
 }
 

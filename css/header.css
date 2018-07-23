@@ -50,10 +50,10 @@ nav a.home {
 }
 nav a.home:hover {
     color: black;
-    background-color: rgba(255,165,0, 0.2);
+    background-color: rgba(255,165,0, 0.3);
 }
 nav a.home:active {
-    background-color: orange;
+    background-color: rgba(255,165,0, 0.3);
 }
 nav a {
     color: orange;
@@ -194,7 +194,11 @@ nav a:hover {
     #homeLogo {
         width:50%;
         height: 146px;
-        background-color:black;
+        
+    }
+    #homeLogo:hover {
+        color: black;
+        background-color: orange;
     }
     #body nav a.home {
         background-size: 220px;
@@ -211,17 +215,43 @@ nav a:hover {
     #nav-backgroud-div {
         background-position:bottom;
     }
+    nav a.home:hover {
+    color: black;
+    background-color: rgba(255, 165, 0, 0.3);
+    }
+    nav a.home:active {
+        color: black;
+        background-color: rgba(255, 165, 0, 0.3);
+    }
     nav a:nth-child(1) {
         width:100%;
         text-align: center;
         padding: 1.9em 0em 0.7em 0em;
         overflow:visible;
+        background-color: rgba(0,0,0,0.5);
 }
     nav a:nth-child(2) {
         width:100%;
         text-align: center;
         padding: 0.5em 0em 1.9em 0em;
-        overflow:visible;;
+        overflow:visible;
+        background-color: rgba(0,0,0,0.5);
+    }
+    nav a:nth-child(1):active {
+        background-color:black;
+        color:white;
+    }
+    nav a:nth-child(2):active {
+        background-color:black;
+        color:white;
+    }
+    nav a:nth-child(1):hover {
+        background-color: rgba(0,0,0,0.8);
+        color:white;
+    }
+    nav a:nth-child(2):hover {
+        background-color: rgba(0,0,0,0.8);
+        color:white;
     }
     #log-reg {
         width:100%;
