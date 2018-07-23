@@ -9,31 +9,6 @@ body {
 }
 
 
-.pagination {
-    display:flex;
-    justify-content: center;
-}
-.page{
-    text-align: center;
-    color:white !important;
-    display: inline;
-    padding : 1em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #movie-details-container {
     margin: 0 auto;

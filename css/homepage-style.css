@@ -104,6 +104,13 @@ body {
     background-color: black;
     border-radius:4px
 }
+/*
+.page:nth-child(1) {
+    box-shadow: 8px 10px 12px black;
+}.page:nth-child(2) {
+    box-shadow: 8px 10px 12px black;
+}
+*/
 .page:nth-child(1):hover {
     padding: 4px 8px;
     margin: 12px 28px;

@@ -88,45 +88,12 @@
             modal_container.style.display = "none";
             
             new_movie.addMovie(addObj,authToken).then(()=>{
-                    global_container = document.getElementById('ceva');
-                    movies_items = document.getElementById('movies-global-container');
-                    global_container.removeChild(movies_items);
-
-                    const addNewMovie = new MovieList;
-
-                    addNewMovie.getMovieList().then((item)=>{
-                        console.log(addNewMovie);
-                        const globalContainer = document.getElementById('ceva');
-                        const moviesGlobalContainer = document.createElement('article');
-                        moviesGlobalContainer.setAttribute('class', 'movies-global-container');
-                        moviesGlobalContainer.setAttribute('id','movies-global-container');
-                        globalContainer.appendChild(moviesGlobalContainer);
-
-                        for( let i = 0; i < addNewMovie.results.length; i++){
-                            console.log(addNewMovie.results[i].Title);
-                            const movieElement = document.createElement('div');
-                            const ancor_element = document.createElement('a');
-                            ancor_element.setAttribute('href','../pages/movieDetails.html?postId='+addNewMovie.items[i]._id);
-                            movieElement.setAttribute('class', 'movie-element');
-                            moviesGlobalContainer.appendChild(movieElement);
-                            const posterContainer = document.createElement('div');
-                            posterContainer.setAttribute('class', 'poster-container');
-                            movieElement.appendChild(posterContainer);
-                            posterContainer.style.backgroundImage = `url("${addNewMovie.items[i].Poster}")`;
-                            posterContainer.style.backgroundSize = "100% 100%";
-                            const imdbRating = document.createElement('p');
-                            imdbRating.innerHTML = "Rating &nbsp;" + addNewMovie.items[i].imdbRating;
-                            imdbRating.setAttribute('class', 'imdb-rating');
-                            posterContainer.appendChild(imdbRating);
-                            const movieTitle  = document.createElement('p');
-                            movieTitle.setAttribute('class', 'movie-title');
-                            ancor_element.appendChild(movieTitle);
-                            movieTitle.innerHTML = addNewMovie.items[i].Title;
-                            movieElement.appendChild(ancor_element);
-                          }   
-                    });                               
+                location.reload();
             })
             
+            
+            
+        
             
         });
 
