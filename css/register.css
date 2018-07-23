@@ -1,10 +1,11 @@
 #movieForm{
 	width: 60%; 
 	margin: 25px auto;
-}
+ }
+
 h3, p{
 	text-align: center;
-	color:black;
+	color:white;
 }
 
 #missUser, #shortPass, #existUser, #missPass, #noMatchPass, .problems{
@@ -25,13 +26,18 @@ body {
 }
 
 .container{
-    margin: 0;
+    width:60%;
+    border-radius: 15px;
+    background-color:rgba(0,0,0,0.8);
+    margin:0;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%) ;
+   
 }
+
 
 .footer{ 
        position: fixed;     
@@ -39,3 +45,16 @@ body {
        bottom: 0px; 
        width: 100%;
    }  
+
+@media(max-width: 576px) {
+    
+}
+@media(min-width:576px) {
+    
+}
+@media(min-width:768px) {
+    
+}
+@media(min-width:992px) {
+    
+}
