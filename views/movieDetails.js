@@ -82,7 +82,6 @@ window.onload = function(){
     }).then(function(){
    
    
-    document.getElementById("delete-btn").addEventListener("click", current_movie.deleteMovie, false);
 
         editBtn.addEventListener('click', function(e) {
             current_movie.MovieFetchData(current_id).then(()=>{
@@ -170,9 +169,15 @@ window.onload = function(){
     });
  });
 
- delBtn.addEventListener('click',()=>{
-    current_movie.deleteMovie(current_id, authToken);
- });
+ delBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (confirm("Are you sure you want to delete this movie?")) {
+            $('.message').text("You deleted a movie!");
+            current_movie.deleteMovie(current_id, authToken);
+        } else {
+            $('.message').text("You canceled the action!");
+        }
+    });
 }
                 
 

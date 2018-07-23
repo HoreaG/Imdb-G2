@@ -98,6 +98,17 @@
 
     function searchMovies (filterList, input){
         searchList.fetchMovieList(filterList, input).then((item)=>{
+            if(item.results==""){
+                const globalContainer = document.getElementById('ceva');
+                const childToRemove = globalContainer.lastElementChild
+                globalContainer.removeChild(childToRemove );
+                const notFoundMsg = document.createElement('p');
+                notFoundMsg.innerHTML = "No movie was found with this description";
+                notFoundMsg.style.color = "white";
+                notFoundMsg.style.backgroundColor = "black";
+                notFoundMsg.style.fontWeight = "bold";
+                globalContainer.appendChild(notFoundMsg);
+            }else{
             console.log('RES', item.results);
             const globalContainer = document.getElementById('ceva');
             const childToRemove = globalContainer.lastElementChild
@@ -127,6 +138,8 @@
           ancor_element.appendChild(movieTitle);
           movieTitle.innerHTML = item.results[i].Title;
           movieElement.appendChild(ancor_element);
+            
+        }
         }
        });
     }
